@@ -1,0 +1,91 @@
+1.如果密码丢失，那么可以通过修改启动单用户模式启动，修改密码。
+kernel一行从后面删除到ro，把ro改为rw rd.break
+启动，输出chroot /sysroot/
+passwd修改密码
+touch /.autoelable更新盘符
+exit
+reboot
+重启即修改完毕
+2.在rhel7中，修改启动模式可以查找/etc/inittab 输入最下面的那个命令，创建一个软链接。
+3.cd - 可以cd到上一次的目录。
+4.再vim中直接输入：1,$s/被替换单词/源单词/g就可以替换
+5.再文件中/查找词，如果同一词很多可以用n跳到下一个词，N是上一个词。
+6.注意man page命令的用法     1      User Commands
+
+       2      System Calls
+
+       3      C Library Functions
+
+       4      Devices and Special Files
+
+       5      File Formats and Conventions
+
+       6      Games et. Al.
+
+       7      Miscellanea
+
+       8      System Administration tools and Deamons
+7.匹配词的命令：awk，sed，grep，sort
+（1）.grep “词”查找有这个词的一行
+（2）.awk -F “间隔符号” ‘{print $数字}’ 输出某一行的以某一间隔符号作为间隔的第几个词，可以陪和grep使用
+[root@hzyholf fangkong]# cat /etc/passwd |grep "/root" |awk -F "/" '{print $3}'
+bin
+sbin
+（3）.sed -i “s/被替换词/源单词/g” 用作替换。-i参数表示更改但不输出屏幕
+     sed -n "数字，数字p" 显示第几行至第几行
+ (4).sort -k数字 -t间隔符号 -n  表示以第几个间隔符号后的词来按顺序排序sort -k1 -t' '  -n test
+
+1
+2
+3
+4
+6
+7
+8
+9
+35
+源文件是
+
+1
+3
+4
+6
+2
+8
+35
+7
+9
+
+8.比较两个文件的不同并且打补丁
+（1）.diff -uN 文件1 文件2 > 文件3.patch
+--- file1       2015-09-27 20:45:59.882148172 +0800
++++ file2       2015-09-27 20:46:09.782148166 +0800
+@@ -1 +1 @@
+-hello,
++world
+~          
+比较不同并且输出到一个.patch文件中
+如果是目录可以
+	diff -uNr 目录1 目录2 > 文件.patch
+打补丁的方法
+patch -p0 < 文件3.patch 把文件1内容更改为文件2的内容了
+patch -Re -p0 < 文件3.patch 可以把文件1还原
+
+patch -p1 < 文件.patch 文件.patch必须放到目录1中，然后执行就可以了，把目录2的东西都替换到1中
+还原一样
+
+
+9.查看网络状态命令
+(1).ping -c 数字（ping几次） -i 数字(隔多久ping一次) ip
+(2).traceroute 网络 发一个包并且接受回来查看路由
+（3）.mtr 是ping和traceroute的加强版融合了后两者的功能
+（4）.dig查看dns解析
+（5）netstat查看各个端口连接情况
+10.查看日志
+/var/log/messages
+审计大法
+
+11.查看文件第n行到第m行
+cat 文件|head -m |tail -(m-n)
+sed -n 'n,mp' 文件
+awk 'NR>=n&&NR<=m{print}' 文件

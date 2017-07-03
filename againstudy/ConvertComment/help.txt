@@ -1,0 +1,11 @@
+Usage: convert [-m] <-s> src_file <-d> dest_file
+                or convert [-m] <-d> dest_file <-s> src_file
+Options:
+    -m         mode[CPP_TO_C, C_TO_CPP], default mode is CPP_TO_C, C_TO_CPP if
+               specify -m
+    -s         source file of convert comment
+    -d         destination file of convert comment
+    -h         help information for convert comment progma
+Versiton       [v1.0]
+Author :       Bss
+

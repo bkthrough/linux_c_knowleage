@@ -1,0 +1,125 @@
+[8117] 24 Jun 22:46:07 - The YunTable Version is 0.1.
+[8117] 24 Jun 22:46:07 - Loading the local region, the conf path is conf/region.conf.
+[8117] 24 Jun 22:46:07 - Loading the wal file wal.log.
+[8117] 24 Jun 22:46:07 - Refreshing the wal file wal.log.
+[8117] 24 Jun 22:46:07 - creating a tmp wal file temp_wal.log.
+[8117] 24 Jun 22:46:07 - replace the wal file with tmp wal file.
+[8117] 24 Jun 22:46:07 - The Region flushing thread has started.
+[8117] 24 Jun 22:46:07 - The Region server is starting at 8302 and will handle request.
+[8117] 24 Jun 22:46:07 - The Region Conf File is at conf/region.conf.
+[8117] 24 Jun 22:46:07 - The Region Flushing Checking Interval is 600.
+[8117] 24 Jun 22:46:07 - The Region Hotness Value is 3600.
+[8117] 24 Jun 22:46:07 - Starting the daemon and Accepting connection...
+[8126] 24 Jun 22:46:29 - The YunTable Version is 0.1.
+[8126] 24 Jun 22:46:29 - Loading the local region, the conf path is conf/region.conf.
+[8126] 24 Jun 22:46:29 - Loading the wal file wal.log.
+[8126] 24 Jun 22:46:29 - The Region flushing thread has started.
+[8126] 24 Jun 22:46:29 - The Region server is starting at 8302 and will handle request.
+[8126] 24 Jun 22:46:29 - The Region Conf File is at conf/region.conf.
+[8126] 24 Jun 22:46:29 - The Region Flushing Checking Interval is 600.
+[8126] 24 Jun 22:46:29 - The Region Hotness Value is 3600.
+[8126] 24 Jun 22:46:29 - Starting the daemon and Accepting connection...
+[8144] 24 Jun 22:47:00 - The YunTable Version is 0.1.
+[8144] 24 Jun 22:47:00 - Loading the local region, the conf path is conf/region.conf.
+[8144] 24 Jun 22:47:00 - Loading the wal file wal.log.
+[8144] 24 Jun 22:47:00 - The Region flushing thread has started.
+[8144] 24 Jun 22:47:00 - The Region server is starting at 8302 and will handle request.
+[8144] 24 Jun 22:47:00 - The Region Conf File is at conf/region.conf.
+[8144] 24 Jun 22:47:00 - The Region Flushing Checking Interval is 600.
+[8144] 24 Jun 22:47:00 - The Region Hotness Value is 3600.
+[8144] 24 Jun 22:47:00 - Starting the daemon and Accepting connection...
+[10049] 25 Jun 09:11:12 - The YunTable Version is 0.1.
+[10049] 25 Jun 09:11:12 - Loading the local region, the conf path is conf/region.conf.
+[10049] 25 Jun 09:11:12 - Loading the wal file wal.log.
+[10049] 25 Jun 09:11:12 - The Region flushing thread has started.
+[10049] 25 Jun 09:11:12 - The Region server is starting at 8302 and will handle request.
+[10049] 25 Jun 09:11:12 - The Region Conf File is at conf/region.conf.
+[10049] 25 Jun 09:11:12 - The Region Flushing Checking Interval is 600.
+[10049] 25 Jun 09:11:12 - The Region Hotness Value is 3600.
+[10049] 25 Jun 09:11:12 - Starting the daemon and Accepting connection...
+[10049] 25 Jun 09:14:20 - Creating a new tablet at the local region for table student.
+[10049] 25 Jun 09:14:20 - Creating a new tablet from table student at tablet0.
+[10049] 25 Jun 09:14:20 - The Memstore's random generated allocated size: 579800
+[10049] 25 Jun 09:14:20 - The new tablet for table student has been created.
+[16219] 25 Jun 23:11:57 - The YunTable Version is 0.1.
+[16219] 25 Jun 23:11:57 - Loading the local region, the conf path is conf/region.conf.
+[16219] 25 Jun 23:11:57 - Loading the tablet at tablet0.
+[16219] 25 Jun 23:11:57 - The Memstore's random generated allocated size: 616200
+[16219] 25 Jun 23:11:57 - Loading the wal file wal.log.
+[16219] 25 Jun 23:11:57 - Reloading the Wal Items to tablet.
+[16219] 25 Jun 23:11:57 - Loading log from the wal file wal.log.
+[16219] 25 Jun 23:11:57 - Refreshing the wal file wal.log.
+[16219] 25 Jun 23:11:57 - creating a tmp wal file temp_wal.log.
+[16219] 25 Jun 23:11:57 - replace the wal file with tmp wal file.
+[16219] 25 Jun 23:11:57 - The Region flushing thread has started.
+[16219] 25 Jun 23:11:57 - The Region server is starting at 8302 and will handle request.
+[16219] 25 Jun 23:11:57 - The Region Conf File is at conf/region.conf.
+[16219] 25 Jun 23:11:57 - The Region Flushing Checking Interval is 600.
+[16219] 25 Jun 23:11:57 - The Region Hotness Value is 3600.
+[16219] 25 Jun 23:11:57 - Starting the daemon and Accepting connection...
+[17125] 25 Jun 23:47:00 - The YunTable Version is 0.1.
+[17125] 25 Jun 23:47:00 - Loading the local region, the conf path is conf/region.conf.
+[17125] 25 Jun 23:47:00 - Loading the tablet at tablet0.
+[17125] 25 Jun 23:47:00 - The Memstore's random generated allocated size: 502800
+[17125] 25 Jun 23:47:00 - Loading the wal file wal.log.
+[17125] 25 Jun 23:47:00 - Reloading the Wal Items to tablet.
+[17125] 25 Jun 23:47:00 - Loading log from the wal file wal.log.
+[17125] 25 Jun 23:47:00 - Refreshing the wal file wal.log.
+[17125] 25 Jun 23:47:00 - creating a tmp wal file temp_wal.log.
+[17125] 25 Jun 23:47:00 - replace the wal file with tmp wal file.
+[17125] 25 Jun 23:47:00 - The Region flushing thread has started.
+[17125] 25 Jun 23:47:00 - The Region server is starting at 8302 and will handle request.
+[17125] 25 Jun 23:47:00 - The Region Conf File is at conf/region.conf.
+[17125] 25 Jun 23:47:00 - The Region Flushing Checking Interval is 600.
+[17125] 25 Jun 23:47:00 - The Region Hotness Value is 3600.
+[17125] 25 Jun 23:47:00 - Starting the daemon and Accepting connection...
+[17125] 25 Jun 23:57:00 - The interval is up, check and flush region now.
+[17125] 25 Jun 23:57:00 - The file student.table's disk_usage:0.
+[17125] 25 Jun 23:57:00 - Refreshing for tablet 0 now.
+[17125] 25 Jun 23:57:00 - Flushing the all tablets Info to file conf/region.conf.
+[17125] 25 Jun 23:57:00 - Finish the checking.
+[17125] 26 Jun 00:07:00 - The interval is up, check and flush region now.
+[17125] 26 Jun 00:07:00 - The file student.table's disk_usage:0.
+[17125] 26 Jun 00:07:00 - Refreshing for tablet 0 now.
+[17125] 26 Jun 00:07:00 - Flushing the all tablets Info to file conf/region.conf.
+[17125] 26 Jun 00:07:00 - Finish the checking.
+[17125] 26 Jun 00:17:00 - The interval is up, check and flush region now.
+[17125] 26 Jun 00:17:00 - The file student.table's disk_usage:0.
+[17125] 26 Jun 00:17:00 - Refreshing for tablet 0 now.
+[17125] 26 Jun 00:17:00 - Flushing the all tablets Info to file conf/region.conf.
+[17125] 26 Jun 00:17:00 - Finish the checking.
+[17125] 26 Jun 00:27:00 - The interval is up, check and flush region now.
+[17125] 26 Jun 00:27:00 - The file student.table's disk_usage:0.
+[17125] 26 Jun 00:27:00 - Refreshing for tablet 0 now.
+[17125] 26 Jun 00:27:00 - Flushing the all tablets Info to file conf/region.conf.
+[17125] 26 Jun 00:27:00 - Finish the checking.
+[17125] 26 Jun 00:37:00 - The interval is up, check and flush region now.
+[17125] 26 Jun 00:37:00 - The file student.table's disk_usage:0.
+[17125] 26 Jun 00:37:00 - Refreshing for tablet 0 now.
+[17125] 26 Jun 00:37:00 - Flushing the all tablets Info to file conf/region.conf.
+[17125] 26 Jun 00:37:00 - Finish the checking.
+[17125] 26 Jun 00:47:00 - The interval is up, check and flush region now.
+[17125] 26 Jun 00:47:00 - The file student.table's disk_usage:0.
+[17125] 26 Jun 00:47:00 - Refreshing for tablet 0 now.
+[17125] 26 Jun 00:47:00 - Flushing the all tablets Info to file conf/region.conf.
+[17125] 26 Jun 00:47:00 - Finish the checking.
+[17125] 26 Jun 00:57:00 - The interval is up, check and flush region now.
+[17125] 26 Jun 00:57:00 - The file student.table's disk_usage:0.
+[17125] 26 Jun 00:57:00 - Refreshing for tablet 0 now.
+[17125] 26 Jun 00:57:00 - Flushing the all tablets Info to file conf/region.conf.
+[17125] 26 Jun 00:57:00 - Finish the checking.
+[17125] 26 Jun 01:07:00 - The interval is up, check and flush region now.
+[17125] 26 Jun 01:07:00 - The file student.table's disk_usage:0.
+[17125] 26 Jun 01:07:00 - Refreshing for tablet 0 now.
+[17125] 26 Jun 01:07:00 - Flushing the all tablets Info to file conf/region.conf.
+[17125] 26 Jun 01:07:00 - Finish the checking.
+[17125] 26 Jun 01:17:00 - The interval is up, check and flush region now.
+[17125] 26 Jun 01:17:00 - The file student.table's disk_usage:0.
+[17125] 26 Jun 01:17:00 - Refreshing for tablet 0 now.
+[17125] 26 Jun 01:17:00 - Flushing the all tablets Info to file conf/region.conf.
+[17125] 26 Jun 01:17:00 - Finish the checking.
+[17125] 26 Jun 01:27:00 - The interval is up, check and flush region now.
+[17125] 26 Jun 01:27:00 - The file student.table's disk_usage:0.
+[17125] 26 Jun 01:27:00 - Refreshing for tablet 0 now.
+[17125] 26 Jun 01:27:00 - Flushing the all tablets Info to file conf/region.conf.
+[17125] 26 Jun 01:27:00 - Finish the checking.

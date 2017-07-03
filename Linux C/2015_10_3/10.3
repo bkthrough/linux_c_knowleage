@@ -1,0 +1,78 @@
+	1.ssh远程访问的时候进行防范的措施
+(1）.修改/etc/ssh/sshd_config 修改可以登陆的用户"AllowUsers 用户名"
+(2).修改端口，/etc/ssh/sshd_config修改Port 
+(3）.修改登陆密码为空时不能登陆
+(4)防火墙设置可以登陆的ip
+(5).利用公私钥来配置
+在/root/.ssh中ssh-keygen 来生成密钥
+ssh-copy-id -i 生成的密钥.pub  root@ip    用来给ip公钥,输入对方的密码
+ssh root@ip  输入生成密钥时设置的密码就可以直接登录了，以后也不用密码了
+	
+	2.当看文件有乱码的时候，可以配置以下在/root目录下，增加一个.vimrc文件
+内容:
+set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
+set termencoding=utf-8
+set encoding=utf-8
+
+
+set mouse=a
+在打开就不是乱码了哦-_-~
+	
+	3.打包tar文件，使用
+tar cvf 要创建的tar包 源文件
+用tar命令打包之后并没有进行压缩，但是却是的文件中的所有东西都整合到一起，这时只有一个inode。
+	打包并压缩：
+tar zcvf 
+压缩为tar.gz文件
+	解压tar文件:
+tar xvf
+	解压tar.gz文件：
+tar zxvf 
+
+	4.使用rar解压：
+unrar e  解压
+rar d  删除
+
+	5.建立yum源的方法：
+（1）.在/etc/yum.repos.d/中建立一个文件，写一个.repo文件。然后写
+[source]
+name=localname
+baseurl=ftp://ip/pub/文件
+gpgcheck=0 检测是否是第三方软件
+enable=1 让这个源可用
+
+（2）.
+cd /
+mkdir /iso
+mv 镜像 iso
+mkdir /mnt/iso
+vim /etc/fstab
+加一条
+你镜像的绝对路径  /mnt/iso  iso9660 defaults    0    0
+                                                0（代表不检验） 0（不备份）
+				                1（校验）       1,2（备份）
+把.iso文件加载到文件夹中
+mount -a来挂载所有文件
+在/etc/yum.repos.d/中建立一个文件
+[source]
+name=localname
+baseurl=file:///mnt/iso
+gpgcheck=0
+enable=1
+	6. 配置桥接：
+    桥接是经过桥接器，把两者连在一起，分到的ip，别人就不能再用了
+    NAT是相当于把内网的ip和外部隔离，节省ip地址
+    配置：先在主机上写一个桥接器ifcfg-br0
+    内容：
+
+    DEVICE="br0"
+    ONBOOT=on
+    BOOTPROTO=static
+    IPADDR=设置的静态ip
+    GATEWAY=网关
+    NETMASK=子网掩码
+    DNS1=dns解析服务器
+    TYPE=bridge
+
+    在虚拟机中点击桥接模式，重启虚拟机。
+    配置一下ifcfg-eth0,写入一个同网段的地址就好了。

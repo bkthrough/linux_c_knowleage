@@ -1,0 +1,9 @@
+#!/bin/sh
+FILE=/etc/ld.so.conf
+KEYW="/FILES/TestProgram/Unix_pro_develop/Unix_Pro/Multip_Proj_curses_shared-lib/lib"
+
+RST=$(cat $FILE|grep $KEYW)
+if [ -z $RST ];then
+  echo $KEYW >> $FILE
+fi
+/sbin/ldconfig

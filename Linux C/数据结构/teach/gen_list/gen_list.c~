@@ -1,0 +1,7 @@
+//广义表接口
+Gen_list init_genlist(char *input_str)      ;    //广义表的创建   
+void     destroy_genlist(Gen_list *gen_list);    //广义表的销毁
+int      get_genlist_count(Gen_list gen_list);    //得到广义表的元素个数
+int      get_genlist_depth(Gen_list gen_list);    //得到广义表的深度
+Gen_list copy_genlist(Gen_list gen_list)     ;    //广义表的拷贝
+void show_genlist(Gent_list gen_list)        ;    //显示广义表信息

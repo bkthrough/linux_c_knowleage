@@ -1,0 +1,876 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ADD_KEY	cli/cli.c	22;"	d	file:
+ADD_NEW_REGION_MASTER_CMD	include/master.h	14;"	d
+ADD_NEW_TABLET_REGION_CMD	include/region.h	7;"	d
+AVAILABLE_SPACE_REGION_CMD	include/region.h	21;"	d
+BEGIN_ALLOCATED_SIZE	region/memstore.c	12;"	d	file:
+BUF_GROWTH_FACTOR	util/buf.c	13;"	d	file:
+BUF_H_	include/buf.h	2;"	d
+Buf	include/buf.h	/^typedef struct _Buf Buf;$/;"	t	typeref:struct:_Buf
+CC	Makefile	/^CC		= gcc -g -Wall$/;"	m
+CFLAGS	Makefile	/^CFLAGS	= -I include\/ -lpthread$/;"	m
+CHECK_PROBLEM_REGION_MASTER_CMD	include/master.h	11;"	d
+CLI_SRC	Makefile	/^CLI_SRC = cli\/*.c$/;"	m
+CMD_OPTION_KEY	cli/cli.c	21;"	d	file:
+CONF_DUPLCATE_NUM_KEY	include/conf.h	16;"	d
+CONF_FLUSH_CHECK_INTERVAL_KEY	include/conf.h	28;"	d
+CONF_HOTNESS_VALUE_KEY	include/conf.h	36;"	d
+CONF_H_	include/conf.h	2;"	d
+CONF_LAST_FLUSHED_ID_KEY	include/conf.h	32;"	d
+CONF_MASTER_CONN_KEY	cli/cli.c	19;"	d	file:
+CONF_OPTION_KEY	include/conf.h	7;"	d
+CONF_PORT_KEY	include/conf.h	12;"	d
+CONF_REGION_LIST_KEY	include/conf.h	20;"	d
+CONF_SEPARATOR	include/global.h	68;"	d
+CONF_SEPARATOR_STRING	include/global.h	69;"	d
+CONF_TABLE_INFO_LIST_KEY	include/conf.h	24;"	d
+CONN_BUF_SIZE	util/rpc.c	28;"	d	file:
+CONN_FAIL	include/rpc.h	9;"	d
+CONN_FAIL_MSG	include/rpc.h	18;"	d
+CONN_H_	include/rpc.h	2;"	d
+CREATE_NEW_TABLE_MASTER_CMD	include/master.h	17;"	d
+CliCache	cli/cli.c	/^}CliCache;$/;"	t	typeref:struct:_CliCache	file:
+ConnParam	include/rpc.h	/^typedef struct _ConnParam ConnParam;$/;"	t	typeref:struct:_ConnParam
+DATA_BLOCK_MAGIC	region/yfile.c	70;"	d	file:
+DEBUG	include/log.h	10;"	d
+DEFAULT_CLI_CONF_PATH	include/global.h	43;"	d
+DEFAULT_CLI_DAEMON_SLEEP_INTERVAL	cli/cli.c	34;"	d	file:
+DEFAULT_DATASTORE_FILE_FOLDER	include/tablet.h	5;"	d
+DEFAULT_DUPLICATE_NUM	master/master.c	12;"	d	file:
+DEFAULT_FLUSH_MEMSTORE_INTERVAL	include/global.h	54;"	d
+DEFAULT_HOTNESS_VALUE	region/region.c	13;"	d	file:
+DEFAULT_LOCAL_REGION_PORT	include/global.h	48;"	d
+DEFAULT_MASTER_CONF_PATH	include/global.h	45;"	d
+DEFAULT_MASTER_FLUSH_CHECK_INTERVAL	master/master.c	14;"	d	file:
+DEFAULT_MASTER_PORT	include/global.h	44;"	d
+DEFAULT_REGION_CONF_PATH	include/global.h	49;"	d
+DEFAULT_REGION_FLUSH_CHECK_INTERVAL	region/region.c	12;"	d	file:
+DEFAULT_SIZE_OF_DATA_BLOCK	region/yfile.c	69;"	d	file:
+DEFAULT_SORT_WATERMARK	region/memstore.c	10;"	d	file:
+DEFAULT_WAL_FILE_PATH	region/region.c	14;"	d	file:
+DEFAULT_YUNTABLE_CLI_PREFIX	cli/cli.c	31;"	d	file:
+DEL_KEY	cli/cli.c	26;"	d	file:
+DISABLE	include/log.h	6;"	d
+DataBlock	region/yfile.c	/^}DataBlock;$/;"	t	typeref:struct:_DataBlock	file:
+EMERG	include/log.h	7;"	d
+END_ALLOCATED_SIZE	region/memstore.c	13;"	d	file:
+ERROR_NO_CMD	include/rpc.h	11;"	d
+ERROR_NO_CMD_MSG	include/rpc.h	20;"	d
+ERROR_NO_PARAM	include/rpc.h	13;"	d
+ERROR_NO_PARAM_MSG	include/rpc.h	22;"	d
+ERROR_ONLY_ALLOWS_ONE_REGION	include/rpc.h	15;"	d
+ERROR_ONLY_ALLOWS_ONE_REGION_MSG	include/rpc.h	24;"	d
+ERROR_TABLET_NOT_EXIST	include/rpc.h	14;"	d
+ERROR_TABLET_NOT_EXIST_MSG	include/rpc.h	23;"	d
+ERROR_WRONG_CMD	include/rpc.h	12;"	d
+ERROR_WRONG_CMD_MSG	include/rpc.h	21;"	d
+ERR_MSG_CLUSTER_FULL	include/msg.h	20;"	d
+ERR_MSG_CMD_NOT_COMPLETE	include/msg.h	11;"	d
+ERR_MSG_NO_CMD_INPUT	include/msg.h	10;"	d
+ERR_MSG_NO_COLUMN	include/msg.h	14;"	d
+ERR_MSG_NO_MASTER	include/msg.h	19;"	d
+ERR_MSG_NO_ROW_KEY	include/msg.h	16;"	d
+ERR_MSG_NO_TABLE_NAME	include/msg.h	15;"	d
+ERR_MSG_NULL_STRING	include/msg.h	12;"	d
+ERR_MSG_PUT	include/msg.h	17;"	d
+ERR_MSG_TABLE_NOT_CREATED	include/msg.h	18;"	d
+ERR_MSG_WRONG_ACTION	include/msg.h	13;"	d
+ERR_MSG_WRONG_ADD_CMD	include/msg.h	23;"	d
+ERR_MSG_WRONG_MASTER	include/msg.h	21;"	d
+ERR_MSG_WRONG_REGION	include/msg.h	22;"	d
+FLUSH_THERSHOLD_PERCENT	region/memstore.c	11;"	d	file:
+FOLDER_SEPARATOR	include/global.h	58;"	d
+FOLDER_SEPARATOR_STRING	include/global.h	59;"	d
+GET_KEY	cli/cli.c	23;"	d	file:
+GET_METADATA_MASTER_CMD	include/master.h	20;"	d
+GET_METADATA_REGION_CMD	include/region.h	18;"	d
+GET_ROLE_CMD	include/global.h	77;"	d
+GET_TABLE_INFO_MASTER_CMD	include/master.h	8;"	d
+GLOBAL_H_	include/global.h	2;"	d
+HELP_KEY	cli/cli.c	27;"	d	file:
+INDEFINITE	include/global.h	40;"	d
+INDEX_BLOCK_MAGIC	region/yfile.c	72;"	d	file:
+INDEX_GROWTH_FACTOR	region/yfile.c	68;"	d	file:
+INFO	include/log.h	9;"	d
+INITIAL_BUF_SIZE	util/buf.c	10;"	d	file:
+INITIAL_INDEX_SIZE	region/yfile.c	67;"	d	file:
+ISSUE	include/log.h	8;"	d
+ISSUE_MSG_NOTHING_FOUND	include/msg.h	27;"	d
+ISSUE_MSG_TABLE_ALREADY_EXISTED	include/msg.h	28;"	d
+ITEM_H_	include/item.h	2;"	d
+ITEM_SEPARATOR	include/global.h	70;"	d
+ITEM_SEPARATOR_STRING	include/global.h	71;"	d
+Index	region/yfile.c	/^}Index;$/;"	t	typeref:struct:_Index	file:
+IndexBlock	region/yfile.c	/^}IndexBlock;$/;"	t	typeref:struct:_IndexBlock	file:
+Item	include/item.h	/^typedef struct _Item Item;$/;"	t	typeref:struct:_Item
+Key	include/item.h	/^typedef struct _Key Key;$/;"	t	typeref:struct:_Key
+LINE_BUF_SIZE	include/global.h	56;"	d
+LINE_SEPARATOR	include/global.h	62;"	d
+LINE_SEPARATOR_STRING	include/global.h	63;"	d
+LIST_H_	include/list.h	2;"	d
+LOG_H_	include/log.h	2;"	d
+List	include/list.h	/^typedef struct _List List;$/;"	t	typeref:struct:_List
+ListNode	util/list.c	/^}ListNode;$/;"	t	typeref:struct:_ListNode	file:
+LogSetting	util/log.c	/^}LogSetting; \/*The Log Will be used both at Master Runtime and Region Runtime.*\/$/;"	t	typeref:struct:_LogSetting	file:
+MALLOC_H_	include/malloc2.h	2;"	d
+MASTER_H_	include/master.h	2;"	d
+MASTER_KEY	include/global.h	79;"	d
+MASTER_LOG_FILE	include/global.h	50;"	d
+MASTER_SRC	Makefile	/^MASTER_SRC = master\/*.c$/;"	m
+MB	include/global.h	73;"	d
+MEMSTORE_H_	include/memstore.h	2;"	d
+MID_SEPARATOR	include/global.h	66;"	d
+MID_SEPARATOR_STRING	include/global.h	67;"	d
+MIN_REGION_AVAILABLE_SIZE	master/master.c	13;"	d	file:
+MSG_H_	include/msg.h	2;"	d
+Master	master/master.c	/^}Master;$/;"	t	typeref:struct:_Master	file:
+Memstore	include/memstore.h	/^typedef struct _Memstore Memstore;$/;"	t	typeref:struct:_Memstore
+Millis	include/global.h	74;"	d
+NULL_STRING	include/global.h	57;"	d
+ONE_ALLOCATED_SIZE	region/memstore.c	9;"	d	file:
+PUT_DATA_REGION_CMD	include/region.h	9;"	d
+PUT_KEY	cli/cli.c	25;"	d	file:
+QUERY_ALL_REGION_CMD	include/region.h	15;"	d
+QUERY_ROW_REGION_CMD	include/region.h	12;"	d
+QUIT_KEY	cli/cli.c	29;"	d	file:
+REGION_FOLDER	region/region.c	15;"	d	file:
+REGION_H_	include/region.h	2;"	d
+REGION_KEY	include/global.h	78;"	d
+REGION_LOG_FILE	include/global.h	51;"	d
+REGION_SRC	Makefile	/^REGION_SRC = region\/*.c$/;"	m
+REMOTE_FAIL	include/rpc.h	10;"	d
+REMOTE_FAIL_MSG	include/rpc.h	19;"	d
+RESULT_SET_MAGIC	util/item.c	34;"	d	file:
+ROW_KEY	cli/cli.c	28;"	d	file:
+RPCRequest	include/rpc.h	/^typedef struct _RPCRequest RPCRequest;$/;"	t	typeref:struct:_RPCRequest
+RPCResponse	include/rpc.h	/^typedef struct _RPCResponse RPCResponse;$/;"	t	typeref:struct:_RPCResponse
+RPC_REQUEST_MAGIC	util/rpc.c	24;"	d	file:
+RPC_RESPONSE_MAGIC	util/rpc.c	25;"	d	file:
+Region	region/region.c	/^}Region;$/;"	t	typeref:struct:_Region	file:
+RegionInfo	include/conf.h	/^}RegionInfo;$/;"	t	typeref:struct:_RegionInfo
+ReplicaQueue	include/conf.h	/^}ReplicaQueue;$/;"	t	typeref:struct:_ReplicaQueue
+ResultSet	include/item.h	/^}ResultSet;$/;"	t	typeref:struct:_ResultSet
+SHOW_KEY	cli/cli.c	24;"	d	file:
+START_SYNC_REGION_CMD	include/region.h	27;"	d
+STRING_SEPARATOR	include/global.h	64;"	d
+STRING_SEPARATOR_STRING	include/global.h	65;"	d
+SUCCESS	include/rpc.h	8;"	d
+SUCC_MSG_COMPLETED	include/msg.h	31;"	d
+SUCC_MSG_TABLE_CREATED	include/msg.h	32;"	d
+SyncJob	include/conf.h	/^}SyncJob;$/;"	t	typeref:struct:_SyncJob
+TABLET_FOLDER_PREFIX	include/global.h	72;"	d
+TABLET_H_	include/tablet.h	2;"	d
+TABLET_USED_SIZE_REGION_CMD	include/region.h	24;"	d
+TABLE_EXT	region/tablet.c	33;"	d	file:
+TABLE_KEY	cli/cli.c	30;"	d	file:
+TIME_STAMP_DIV	region/region.c	16;"	d	file:
+TMP_WAL_FILE_PATH	region/wal.c	31;"	d	file:
+TRAILER_MAGIC	region/yfile.c	71;"	d	file:
+TableInfo	include/conf.h	/^}TableInfo;$/;"	t	typeref:struct:_TableInfo
+Tablet	include/tablet.h	/^typedef struct _Tablet Tablet;$/;"	t	typeref:struct:_Tablet
+TabletInfo	include/conf.h	/^}TabletInfo;$/;"	t	typeref:struct:_TabletInfo
+Tokens	include/utils.h	/^}Tokens;$/;"	t	typeref:struct:_Tokens
+Trailer	region/yfile.c	/^}Trailer;$/;"	t	typeref:struct:_Trailer	file:
+UNDEFINED_STATUS_CODE_MSG	include/rpc.h	25;"	d
+UTILS_H	include/utils.h	2;"	d
+UTIL_SRC	Makefile	/^UTIL_SRC = util\/*.c$/;"	m
+VERSION	include/global.h	27;"	d
+WAL_H_	include/wal.h	2;"	d
+WAL_MAGIC_HEADER	region/wal.c	30;"	d	file:
+Wal	include/wal.h	/^typedef struct _Wal Wal;$/;"	t	typeref:struct:_Wal
+WalItem	include/wal.h	/^typedef struct _WalItem WalItem;$/;"	t	typeref:struct:_WalItem
+YFILE_EXT	region/tablet.c	34;"	d	file:
+YFILE_H_	include/yfile.h	2;"	d
+YFile	include/yfile.h	/^typedef struct _YFile YFile;$/;"	t	typeref:struct:_YFile
+_Buf	util/buf.c	/^struct _Buf$/;"	s	file:
+_CliCache	cli/cli.c	/^typedef struct _CliCache$/;"	s	file:
+_DataBlock	region/yfile.c	/^typedef struct _DataBlock$/;"	s	file:
+_Index	region/yfile.c	/^typedef struct _Index$/;"	s	file:
+_IndexBlock	region/yfile.c	/^typedef struct _IndexBlock$/;"	s	file:
+_Item	util/item.c	/^struct _Item$/;"	s	file:
+_Key	util/item.c	/^struct _Key$/;"	s	file:
+_List	util/list.c	/^struct _List$/;"	s	file:
+_ListNode	util/list.c	/^typedef struct _ListNode$/;"	s	file:
+_LogSetting	util/log.c	/^typedef struct _LogSetting$/;"	s	file:
+_Master	master/master.c	/^typedef struct _Master$/;"	s	file:
+_Memstore	region/memstore.c	/^struct _Memstore$/;"	s	file:
+_RPCRequest	util/rpc.c	/^struct _RPCRequest$/;"	s	file:
+_RPCResponse	util/rpc.c	/^struct _RPCResponse$/;"	s	file:
+_Region	region/region.c	/^typedef struct _Region$/;"	s	file:
+_RegionInfo	include/conf.h	/^typedef struct _RegionInfo$/;"	s
+_ReplicaQueue	include/conf.h	/^typedef struct _ReplicaQueue$/;"	s
+_ResultSet	include/item.h	/^typedef struct _ResultSet$/;"	s
+_SyncJob	include/conf.h	/^typedef struct _SyncJob$/;"	s
+_TableInfo	include/conf.h	/^typedef struct _TableInfo$/;"	s
+_Tablet	region/tablet.c	/^struct _Tablet$/;"	s	file:
+_TabletInfo	include/conf.h	/^typedef struct _TabletInfo$/;"	s
+_Tokens	include/utils.h	/^typedef struct _Tokens$/;"	s
+_Trailer	region/yfile.c	/^typedef struct _Trailer$/;"	s	file:
+_Wal	region/wal.c	/^struct _Wal$/;"	s	file:
+_WalItem	region/wal.c	/^struct _WalItem$/;"	s	file:
+_YFile	region/yfile.c	/^struct _YFile$/;"	s	file:
+add	cli/cli.c	/^char* add(Tokens* space_tokens)$/;"	f
+add_int_param	include/rpc.h	/^List* add_int_param(List* params, int param_value);$/;"	p
+add_int_param	util/rpc.c	/^List* add_int_param(List* params, int param_value)$/;"	f
+add_new_region	cli/cli.c	/^boolean add_new_region(char* master_conn, char* region_conn)$/;"	f
+add_new_region_master	include/master.h	/^boolean add_new_region_master(char* region_conn);$/;"	p
+add_new_region_master	master/master.c	/^boolean add_new_region_master(char* region_conn)$/;"	f
+add_new_tablet_region	include/region.h	/^boolean add_new_tablet_region(char *table_name);$/;"	p
+add_new_tablet_region	region/region.c	/^boolean add_new_tablet_region(char *table_name)$/;"	f
+add_param	include/rpc.h	/^List* add_param(List* params, int param_size, byte* param_value);$/;"	p
+add_param	util/rpc.c	/^List* add_param(List* params, int param_size, byte* param_value)$/;"	f
+allocated_size	region/memstore.c	/^    size_t allocated_size; \/** the size of items has been allocated in memory, the default is 500000 **\/$/;"	m	struct:_Memstore	file:
+allocated_size	util/buf.c	/^    int allocated_size; \/* the size has been allocated *\/$/;"	m	struct:_Buf	file:
+append_index	region/yfile.c	/^void append_index(IndexBlock *indexBlock, size_t offset, size_t item_size, Key* lastKey,$/;"	f
+append_memstore	include/memstore.h	/^void append_memstore(Memstore *memstore, Item *item);$/;"	p
+append_memstore	region/memstore.c	/^void append_memstore(Memstore *memstore, Item *item)$/;"	f
+append_wal_item	include/wal.h	/^void append_wal_item(Wal *wal, WalItem* walItem);$/;"	p
+append_wal_item	region/wal.c	/^void append_wal_item(Wal *wal, WalItem* walItem)$/;"	f
+array_to_list	include/list.h	/^List* array_to_list(void** array, int size);$/;"	p
+array_to_list	util/list.c	/^List* array_to_list(void** array, int size)$/;"	f
+array_to_string	include/utils.h	/^char* array_to_string(char** array, int begin_index, int end_index);$/;"	p
+array_to_string	util/utils.c	/^char* array_to_string(char** array, int begin_index, int end_index)$/;"	f
+avail_space	include/conf.h	/^    int avail_space;$/;"	m	struct:_RegionInfo
+available_space_region	include/region.h	/^int available_space_region(void);$/;"	p
+available_space_region	region/region.c	/^int available_space_region(void)$/;"	f
+batch_put_data_to_table	cli/cli.c	/^char* batch_put_data_to_table(CliCache* cliCache, TableInfo* tableInfo, ResultSet* resultSet)$/;"	f
+begin_timestamp	include/conf.h	/^    long long begin_timestamp; \/* The start of timestamp, if it is 0, means nothing has been set *\/$/;"	m	struct:_TabletInfo
+begin_timestamp	include/conf.h	/^    long long begin_timestamp;$/;"	m	struct:_SyncJob
+begin_timestamp	region/memstore.c	/^    long long begin_timestamp; \/* the least item timestamp from memstore's all items *\/$/;"	m	struct:_Memstore	file:
+begin_timestamp	region/yfile.c	/^    long long begin_timestamp; \/* the least item timestamp inside the datablock *\/$/;"	m	struct:_Index	file:
+begin_timestamp	region/yfile.c	/^    long long begin_timestamp; \/* the least item timestamp inside the yfile *\/$/;"	m	struct:_Trailer	file:
+between_keys	include/item.h	/^boolean between_keys(Key *firstKey, Key *lastKey, char *row_key);$/;"	p
+between_keys	util/item.c	/^boolean between_keys(Key *firstKey, Key *lastKey, char *row_key)$/;"	f
+between_timestamps	include/item.h	/^boolean between_timestamps(long long timestamp, long long begin_timestamp, long long end_timestamp);$/;"	p
+between_timestamps	util/item.c	/^boolean between_timestamps(long long timestamp, long long begin_timestamp, long long end_timestamp)$/;"	f
+bloom_filter_key	region/yfile.c	/^boolean bloom_filter_key(YFile* yfile, char* row_key)$/;"	f
+bloom_filter_timestamp	region/yfile.c	/^boolean bloom_filter_timestamp(YFile* yfile, long long begin_timestamp, long long end_timestamp)$/;"	f
+bool_to_str	include/global.h	38;"	d
+boolean	include/global.h	/^typedef unsigned short boolean;$/;"	t
+bsearch_indexs	region/yfile.c	/^int bsearch_indexs(int l, int r, Index** indexs, char* row_key, Key* firstKey)$/;"	f
+bsearch_item_index_by_row_key	util/item.c	/^int bsearch_item_index_by_row_key(int l, int r, Item** items, char *row_key)$/;"	f
+btoi	include/utils.h	/^int btoi(byte *b);$/;"	p
+btoi	util/utils.c	/^int btoi(byte *b)$/;"	f
+btoll	include/utils.h	/^long long btoll(byte *b);$/;"	p
+btoll	util/utils.c	/^long long btoll(byte *b)$/;"	f
+btos	include/utils.h	/^short btos(byte *b);$/;"	p
+btos	util/utils.c	/^short btos(byte *b)$/;"	f
+buf_cat	include/buf.h	/^void buf_cat(Buf *buf, void* src, int size);$/;"	p
+buf_cat	util/buf.c	/^void buf_cat(Buf *buf, void* src, int size)$/;"	f
+buf_combine	include/buf.h	/^void buf_combine(Buf* dest_buf, Buf* src_buf);$/;"	p
+buf_combine	util/buf.c	/^void buf_combine(Buf* dest_buf, Buf* src_buf)$/;"	f
+buf_load	include/buf.h	/^void* buf_load(Buf* buf, int size);$/;"	p
+buf_load	util/buf.c	/^void* buf_load(Buf* buf, int size)$/;"	f
+buf_load_int	include/buf.h	/^int buf_load_int(Buf* buf);$/;"	p
+buf_load_int	util/buf.c	/^int buf_load_int(Buf* buf)$/;"	f
+buf_load_long_long	include/buf.h	/^long long buf_load_long_long(Buf* buf);$/;"	p
+buf_load_long_long	util/buf.c	/^long long buf_load_long_long(Buf* buf)$/;"	f
+buf_load_short	include/buf.h	/^short buf_load_short(Buf* buf);$/;"	p
+buf_load_short	util/buf.c	/^short buf_load_short(Buf* buf)$/;"	f
+byte	include/global.h	/^typedef char byte; \/** stands for a series of data or bytes, rather than chars **\/$/;"	t
+byte_to_item	util/item.c	/^Item* byte_to_item(Buf* buf)$/;"	f
+byte_to_key	util/item.c	/^Key* byte_to_key(Buf* buf)$/;"	f
+byte_to_params	util/rpc.c	/^List* byte_to_params(Buf* buf)$/;"	f
+byte_to_result_set	include/item.h	/^ResultSet* byte_to_result_set(byte* buf);$/;"	p
+byte_to_result_set	util/item.c	/^ResultSet* byte_to_result_set(byte* bytes)$/;"	f
+byte_to_rpc_request	util/rpc.c	/^RPCRequest* byte_to_rpc_request(byte* bytes)$/;"	f
+byte_to_rpc_response	util/rpc.c	/^RPCResponse* byte_to_rpc_response(byte* bytes)$/;"	f
+cat	include/utils.h	/^char* cat(char* dest, char* src);$/;"	p
+cat	util/utils.c	/^char* cat(char* dest, char* src)$/;"	f
+check_and_flush_region	region/region.c	/^void check_and_flush_region(void)$/;"	f
+check_node_validity	include/rpc.h	/^boolean check_node_validity(char* conn, char* type);$/;"	p
+check_node_validity	util/rpc.c	/^boolean check_node_validity(char* conn, char* type)$/;"	f
+check_problem_region	cli/cli.c	/^boolean check_problem_region(char* problem_region_conn)$/;"	f
+check_problem_region_master	include/master.h	/^boolean check_problem_region_master(char* problem_region_conn);$/;"	p
+check_problem_region_master	master/master.c	/^boolean check_problem_region_master(char* problem_region_conn)$/;"	f
+clean_tokens	util/utils.c	/^Tokens* clean_tokens(Tokens* tokens)$/;"	f
+cleansing	include/item.h	/^ResultSet* cleansing(ResultSet* set);$/;"	p
+cleansing	util/item.c	/^ResultSet* cleansing(ResultSet* set)$/;"	f
+cliCacheInst	cli/cli.c	/^CliCache* cliCacheInst = NULL;$/;"	v
+cli_normalize_cmd	cli/cli.c	/^char *cli_normalize_cmd(char *cmd)$/;"	f
+cmd_length	util/rpc.c	/^    int cmd_length; \/** for deserializing**\/$/;"	m	struct:_RPCRequest	file:
+cmd_name	util/rpc.c	/^    char *cmd_name;$/;"	m	struct:_RPCRequest	file:
+cmp	include/utils.h	/^boolean cmp(char* dest, char* src, int len);$/;"	p
+cmp	util/utils.c	/^boolean cmp(char* dest, char* src, int len)$/;"	f
+cmp_item	include/item.h	/^int cmp_item(Item* item1, Item* item2);$/;"	p
+cmp_item	util/item.c	/^int cmp_item(Item* item1, Item* item2)$/;"	f
+cmp_item_void	include/item.h	/^int cmp_item_void(const void* item1_void, const void* item2_void);$/;"	p
+cmp_item_void	util/item.c	/^int cmp_item_void(const void* item1_void, const void* item2_void)$/;"	f
+cmp_item_with_row_key	include/item.h	/^int cmp_item_with_row_key(const Item *item, const char* row_key);$/;"	p
+cmp_item_with_row_key	util/item.c	/^int cmp_item_with_row_key(const Item *item, const char* row_key)$/;"	f
+cmp_key_with_row_key	include/item.h	/^int cmp_key_with_row_key(const Key *key, const char* row_key);$/;"	p
+cmp_key_with_row_key	util/item.c	/^int cmp_key_with_row_key(const Key *key, const char* row_key)$/;"	f
+cmp_region_info_void	master/master.c	/^int cmp_region_info_void(void const* regionInfo1_void, void const* regionInfo2_void)$/;"	f
+column_name	util/item.c	/^    char* column_name; \/**If the item is the deletion mark, the column name means the column before timestamp has been deleted **\/$/;"	m	struct:_Key	file:
+column_name_len	util/item.c	/^    short column_name_len; \/**If column_name_len == 0, means all columns before timestamp has been deleted **\/$/;"	m	struct:_Key	file:
+conf_path	cli/cli.c	/^    char* conf_path; \/** default place is conf\/cli.conf **\/$/;"	m	struct:_CliCache	file:
+conf_path	master/master.c	/^    char* conf_path;$/;"	m	struct:_Master	file:
+conf_path	region/region.c	/^    char* conf_path;$/;"	m	struct:_Region	file:
+conn	include/conf.h	/^    char* conn;$/;"	m	struct:_RegionInfo
+connect_conn	include/rpc.h	/^RPCResponse* connect_conn(char* conn, RPCRequest* rpcRequest);$/;"	p
+connect_conn	util/rpc.c	/^RPCResponse* connect_conn(char* conn, RPCRequest* rpcRequest)$/;"	f
+connecting	include/conf.h	/^    boolean connecting;$/;"	m	struct:_RegionInfo
+count	include/utils.h	/^int count(char *string, char target);$/;"	p
+count	util/utils.c	/^int count(char *string, char target)$/;"	f
+cpy	include/utils.h	/^char* cpy(char* dest, char* src);$/;"	p
+cpy	util/utils.c	/^char* cpy(char* dest, char* src)$/;"	f
+create_buf	include/buf.h	/^Buf* create_buf(int size, byte* data);$/;"	p
+create_buf	util/buf.c	/^Buf* create_buf(int index, byte* data)$/;"	f
+create_index_block	region/yfile.c	/^IndexBlock* create_index_block(void)$/;"	f
+create_key	util/item.c	/^Key* create_key(char *row_key, char *column_name,long long timestamp)$/;"	f
+create_key_with_current_timestamp	util/item.c	/^Key* create_key_with_current_timestamp(char *row_key, char *column_name)$/;"	f
+create_list_node	util/list.c	/^ListNode* create_list_node(void* data)$/;"	f
+create_new_table	cli/cli.c	/^boolean create_new_table(char* master_conn, char* table_name)$/;"	f
+create_new_table_master	include/master.h	/^boolean create_new_table_master(char* table_name);$/;"	p
+create_new_table_master	master/master.c	/^boolean create_new_table_master(char* table_name)$/;"	f
+create_new_tablet	master/master.c	/^TabletInfo* create_new_tablet(RegionInfo *regionInfo, char* table_name)$/;"	f
+create_new_yfile	include/yfile.h	/^YFile* create_new_yfile(char* file_path, ResultSet* resultSet, char* table_name);$/;"	p
+create_new_yfile	region/yfile.c	/^YFile* create_new_yfile(char* file_path, ResultSet* resultSet, char* table_name)$/;"	f
+create_or_rewrite_file	include/utils.h	/^void create_or_rewrite_file(char *file_path, char* content);$/;"	p
+create_or_rewrite_file	util/utils.c	/^void create_or_rewrite_file(char *file_name, char* content)$/;"	f
+create_region_info	include/conf.h	/^RegionInfo* create_region_info(char* region_conn);$/;"	p
+create_region_info	util/conf.c	/^RegionInfo* create_region_info(char* region_conn)$/;"	f
+create_replica_queue	include/conf.h	/^ReplicaQueue* create_replica_queue(int id);$/;"	p
+create_replica_queue	util/conf.c	/^ReplicaQueue* create_replica_queue(int id)$/;"	f
+create_rpc_request	include/rpc.h	/^RPCRequest* create_rpc_request(char* cmd, List *params);$/;"	p
+create_rpc_request	util/rpc.c	/^RPCRequest* create_rpc_request(char* cmd, List *params)$/;"	f
+create_rpc_response	include/rpc.h	/^RPCResponse* create_rpc_response(int status, int result_length, byte* result);$/;"	p
+create_rpc_response	util/rpc.c	/^RPCResponse* create_rpc_response(int status, int result_length, byte* result)$/;"	f
+create_sync_job	include/conf.h	/^SyncJob* create_sync_job(char* target_conn, char* table_name, long long begin_timestamp, long long end_timestamp);$/;"	p
+create_sync_job	util/conf.c	/^SyncJob* create_sync_job(char* target_conn, char* table_name, $/;"	f
+create_table_info	include/conf.h	/^TableInfo* create_table_info(char *table_name);$/;"	p
+create_table_info	util/conf.c	/^TableInfo* create_table_info(char *table_name)$/;"	f
+create_table_info_with_region_conn_list	include/conf.h	/^TableInfo* create_table_info_with_region_conn_list(char *table_name, List* regionConnList);$/;"	p
+create_tablet	include/tablet.h	/^Tablet* create_tablet(int tablet_id, char *tablet_folder, char *table_name);$/;"	p
+create_tablet	region/tablet.c	/^Tablet* create_tablet(int tablet_id, char *tablet_folder, char *table_name)$/;"	f
+create_tablet_info	include/conf.h	/^TabletInfo* create_tablet_info(RegionInfo *regionInfo, long long begin_timestamp, long long end_timestamp);$/;"	p
+create_tablet_info	util/conf.c	/^TabletInfo* create_tablet_info(RegionInfo *regionInfo, long long begin_timestamp, long long end_timestamp)$/;"	f
+create_trailer	region/yfile.c	/^Trailer* create_trailer(int index_block_offset, char* table_name, size_t total_item_num, Key* firstKey,$/;"	f
+create_wal_item	include/wal.h	/^WalItem* create_wal_item(short tablet_id, long item_id,Item *item);$/;"	p
+create_wal_item	region/wal.c	/^WalItem* create_wal_item(short tablet_id, long item_id, Item* item)$/;"	f
+current_index_allocated_size	region/yfile.c	/^    size_t current_index_allocated_size; \/** No Persistence, count allocated size in memory, usable at creating**\/$/;"	m	struct:_IndexBlock	file:
+cursor	util/list.c	/^    ListNode* cursor;$/;"	m	struct:_List	file:
+data	util/buf.c	/^    byte* data;$/;"	m	struct:_Buf	file:
+data	util/list.c	/^    void* data;$/;"	m	struct:_ListNode	file:
+dataBlockCache	region/yfile.c	/^    DataBlock** dataBlockCache; \/** Used for Hotness Caching **\/$/;"	m	struct:_YFile	file:
+del	cli/cli.c	/^char* del(Tokens* space_tokens)$/;"	f
+destory_buf	include/buf.h	/^void destory_buf(Buf* buf);$/;"	p
+destory_buf	util/buf.c	/^void destory_buf(Buf* buf)$/;"	f
+destory_result_set	include/item.h	/^void destory_result_set(ResultSet *resultSet);$/;"	p
+destory_result_set	util/item.c	/^void destory_result_set(ResultSet *resultSet)$/;"	f
+destory_rpc_request	include/rpc.h	/^void destory_rpc_request(RPCRequest* rpcRequest);$/;"	p
+destory_rpc_request	util/rpc.c	/^void destory_rpc_request(RPCRequest* rpcRequest)$/;"	f
+destory_rpc_response	include/rpc.h	/^void destory_rpc_response(RPCResponse* rpcResponse);$/;"	p
+destory_rpc_response	util/rpc.c	/^void destory_rpc_response(RPCResponse* rpcResponse)$/;"	f
+destory_table_info	include/conf.h	/^void destory_table_info(void* tableInfo);$/;"	p
+destory_table_info	util/conf.c	/^void destory_table_info(void* tableInfo_void)$/;"	f
+duplicate_num	master/master.c	/^    int duplicate_num;$/;"	m	struct:_Master	file:
+end_timestamp	include/conf.h	/^    long long end_timestamp; \/* The end of timestamp, if it is 0, means nothing has been set *\/$/;"	m	struct:_TabletInfo
+end_timestamp	include/conf.h	/^    long long end_timestamp;$/;"	m	struct:_SyncJob
+end_timestamp	region/memstore.c	/^    long long end_timestamp; \/* the last item timestamp from memstore's all items *\/$/;"	m	struct:_Memstore	file:
+end_timestamp	region/yfile.c	/^    long long end_timestamp; \/* the last item timestamp inside the yfile *\/$/;"	m	struct:_Trailer	file:
+end_timestamp	region/yfile.c	/^    long long end_timestamp; \/* the last timestamp inside the datablock *\/$/;"	m	struct:_Index	file:
+enlarge_buf	util/buf.c	/^void enlarge_buf(Buf *buf, int size)$/;"	f
+enlarge_memstore	region/memstore.c	/^Memstore* enlarge_memstore(Memstore *memstore)$/;"	f
+extract_tablet_id	region/tablet.c	/^int extract_tablet_id(char *table_folder)$/;"	f
+false	include/global.h	34;"	d
+false_str	include/global.h	37;"	d
+file_exist	include/utils.h	/^boolean file_exist(char* file_path);$/;"	p
+file_exist	util/utils.c	/^boolean file_exist(char* file_path)$/;"	f
+file_path	region/yfile.c	/^    char* file_path; \/** No Persistence **\/$/;"	m	struct:_YFile	file:
+find_src_tablets	master/master.c	/^List* find_src_tablets(TableInfo* tableInfo, TabletInfo* infectedTabletInfo, List* problemRegions)$/;"	f
+first	util/list.c	/^    ListNode* first;$/;"	m	struct:_List	file:
+firstKey	region/yfile.c	/^    Key* firstKey;$/;"	m	struct:_Trailer	file:
+flush_check_interval	master/master.c	/^    int flush_check_interval;$/;"	m	struct:_Master	file:
+flush_check_interval	region/region.c	/^    int flush_check_interval;$/;"	m	struct:_Region	file:
+flush_index	region/yfile.c	/^void flush_index(Index *index, FILE *fp)$/;"	f
+flush_index_block	region/yfile.c	/^void flush_index_block(IndexBlock *indexBlock, int begin_offset, FILE* fp)$/;"	f
+flush_item	include/item.h	/^void flush_item(Item *item, FILE *fp);$/;"	p
+flush_item	util/item.c	/^void flush_item(Item *item, FILE *fp)$/;"	f
+flush_item_list	region/yfile.c	/^void flush_item_list(IndexBlock *indexBlock, size_t begin_offset, ResultSet* resultSet, FILE* fp)$/;"	f
+flush_key	include/item.h	/^void flush_key(Key* key, FILE *fp);$/;"	p
+flush_key	util/item.c	/^void flush_key(Key* key, FILE *fp)$/;"	f
+flush_key_value	include/conf.h	/^void flush_key_value(char* file_path, char* key, char* value);$/;"	p
+flush_key_value	util/conf.c	/^void flush_key_value(char* file_path, char* key, char* value)$/;"	f
+flush_region_daemon_thread	region/region.c	/^void* flush_region_daemon_thread(void* nul)$/;"	f
+flush_region_info_list	include/conf.h	/^void flush_region_info_list(char* file_path, List* regionList);$/;"	p
+flush_region_info_list	util/conf.c	/^void flush_region_info_list(char* file_path, List* regionInfoList)$/;"	f
+flush_table_info_list	include/conf.h	/^void flush_table_info_list(char* file_path, List* tableInfoList);$/;"	p
+flush_table_info_list	util/conf.c	/^void flush_table_info_list(char* file_path, List* tableInfoList)$/;"	f
+flush_tablets_info	region/region.c	/^void flush_tablets_info(char* file_path, List* tabletList)$/;"	f
+flush_trailer	region/yfile.c	/^void flush_trailer(Trailer *trailer, FILE *fp)$/;"	f
+flush_wal_item	region/wal.c	/^void flush_wal_item(WalItem *walItem, FILE *fp)$/;"	f
+flushing_mutex	region/tablet.c	/^    pthread_mutex_t flushing_mutex;$/;"	m	struct:_Tablet	file:
+folder	region/tablet.c	/^    char* folder; \/** will use the tablet name as the folder name **\/$/;"	m	struct:_Tablet	file:
+found_items_by_row_key	include/item.h	/^ResultSet* found_items_by_row_key(int size, Item** items, char* row_key);$/;"	p
+found_items_by_row_key	util/item.c	/^ResultSet* found_items_by_row_key(int size, Item** items, char* row_key)$/;"	f
+found_items_by_timestamp	include/item.h	/^ResultSet* found_items_by_timestamp(int size, Item** items, long long begin_timestamp, long long end_timestamp);$/;"	p
+found_items_by_timestamp	util/item.c	/^ResultSet* found_items_by_timestamp(int size, Item** items, long long begin_timestamp, long long end_timestamp)$/;"	f
+free2	include/malloc2.h	/^void free2(void* ptr);$/;"	p
+free2	util/malloc2.c	/^void free2(void* ptr)$/;"	f
+free_buf	include/buf.h	/^void free_buf(Buf* buf);$/;"	p
+free_buf	util/buf.c	/^void free_buf(Buf* buf)$/;"	f
+free_data_block	region/yfile.c	/^void free_data_block(DataBlock* dataBlock)$/;"	f
+free_item	include/item.h	/^void free_item(Item *item);$/;"	p
+free_item	util/item.c	/^void free_item(Item* item)$/;"	f
+free_item_array	include/item.h	/^void free_item_array(int item_size, Item** items);$/;"	p
+free_item_array	util/item.c	/^void free_item_array(int item_size, Item** items)$/;"	f
+free_key	include/item.h	/^void free_key(Key *key);$/;"	p
+free_key	util/item.c	/^void free_key(Key *key)$/;"	f
+free_memstore	include/memstore.h	/^void free_memstore(Memstore* memstore);$/;"	p
+free_memstore	region/memstore.c	/^void free_memstore(Memstore* memstore)$/;"	f
+free_node	util/list.c	/^void free_node(ListNode* node)$/;"	f
+free_replica_queue	util/conf.c	/^void free_replica_queue(void* replicaQueue_void)$/;"	f
+free_result_set	include/item.h	/^void free_result_set(ResultSet *resultSet);$/;"	p
+free_result_set	util/item.c	/^void free_result_set(ResultSet *resultSet)$/;"	f
+free_tokens	include/utils.h	/^void free_tokens(Tokens* tokens);$/;"	p
+free_tokens	util/utils.c	/^void free_tokens(Tokens* tokens)$/;"	f
+free_wal_item_void	include/wal.h	/^void free_wal_item_void(void* walItem);$/;"	p
+free_wal_item_void	region/wal.c	/^void free_wal_item_void(void* walItem)$/;"	f
+frees	include/malloc2.h	/^void frees(int size, ...);$/;"	p
+frees	util/malloc2.c	/^void frees(int size, ...)$/;"	f
+generate_charactor_params	include/rpc.h	/^List* generate_charactor_params(int size, ...);$/;"	p
+generate_charactor_params	util/rpc.c	/^List* generate_charactor_params(int size, ...)$/;"	f
+generate_list_by_token	include/utils.h	/^List* generate_list_by_token(char* buf, char token);$/;"	p
+generate_list_by_token	util/utils.c	/^List* generate_list_by_token(char* bytes, char token)$/;"	f
+generate_random_allocated_size	region/memstore.c	/^int generate_random_allocated_size()$/;"	f
+generate_random_int	include/utils.h	/^int generate_random_int();$/;"	p
+generate_random_int	util/utils.c	/^int generate_random_int()$/;"	f
+get	cli/cli.c	/^char* get(Tokens* space_tokens)$/;"	f
+get_all_items_memstore	include/memstore.h	/^ResultSet* get_all_items_memstore(Memstore *memstore);$/;"	p
+get_all_items_memstore	region/memstore.c	/^ResultSet* get_all_items_memstore(Memstore *memstore)$/;"	f
+get_all_sorted_items_memstore	include/memstore.h	/^ResultSet* get_all_sorted_items_memstore(Memstore *memstore);$/;"	p
+get_buf_data	include/buf.h	/^byte* get_buf_data(Buf *buf);$/;"	p
+get_buf_data	util/buf.c	/^byte* get_buf_data(Buf *buf)$/;"	f
+get_buf_index	include/buf.h	/^int get_buf_index(Buf *buf);$/;"	p
+get_buf_index	util/buf.c	/^int get_buf_index(Buf *buf)$/;"	f
+get_column_name	include/item.h	/^char* get_column_name(Item *item);$/;"	p
+get_column_name	util/item.c	/^char* get_column_name(Item *item)$/;"	f
+get_conf_path_from_argv	include/conf.h	/^char* get_conf_path_from_argv(int argc, char *argv[], char* default_conf_path);$/;"	p
+get_conf_path_from_argv	util/conf.c	/^char* get_conf_path_from_argv(int argc, char *argv[], char* default_conf_path)$/;"	f
+get_current_time_stamp	include/utils.h	/^long long get_current_time_stamp();$/;"	p
+get_current_time_stamp	util/utils.c	/^long long get_current_time_stamp()$/;"	f
+get_disk_usage	region/tablet.c	/^int get_disk_usage(Tablet *tablet)$/;"	f
+get_error_message	include/rpc.h	/^char* get_error_message(int status_code);$/;"	p
+get_error_message	util/rpc.c	/^char* get_error_message(int status_code)$/;"	f
+get_file_size	include/utils.h	/^int get_file_size(char *file_path);$/;"	p
+get_file_size	util/utils.c	/^int get_file_size(char *file_path)$/;"	f
+get_files_path_by_ext	include/utils.h	/^List* get_files_path_by_ext(char *folder_path, char *ext);$/;"	p
+get_files_path_by_ext	util/utils.c	/^List* get_files_path_by_ext(char *folder_path, char *ext)$/;"	f
+get_first_key	include/item.h	/^Key* get_first_key(ResultSet* resultSet);$/;"	p
+get_first_key	util/item.c	/^Key* get_first_key(ResultSet* resultSet)$/;"	f
+get_free_size_tablet	include/tablet.h	/^int get_free_size_tablet(Tablet *tablet);$/;"	p
+get_full_file_name	include/utils.h	/^char* get_full_file_name(char* file_path);$/;"	p
+get_full_file_name	util/utils.c	/^char* get_full_file_name(char* file_path)$/;"	f
+get_incr_item_id	region/region.c	/^long long get_incr_item_id()$/;"	f
+get_int_value_by_key	include/conf.h	/^int get_int_value_by_key(char *file_path, char* target_key);$/;"	p
+get_int_value_by_key	util/conf.c	/^int get_int_value_by_key(char *file_path, char* target_key)$/;"	f
+get_item_id_wal_item	include/wal.h	/^long long get_item_id_wal_item(WalItem* walItem);$/;"	p
+get_item_id_wal_item	region/wal.c	/^long long get_item_id_wal_item(WalItem* walItem)$/;"	f
+get_item_wal_item	include/wal.h	/^Item* get_item_wal_item(WalItem* walItem);$/;"	p
+get_item_wal_item	region/wal.c	/^Item* get_item_wal_item(WalItem* walItem)$/;"	f
+get_key	include/item.h	/^Key* get_key(Item *item);$/;"	p
+get_key	util/item.c	/^Key* get_key(Item *item)$/;"	f
+get_last_flushed_id	include/tablet.h	/^long get_last_flushed_id(Tablet* tablet);$/;"	p
+get_last_flushed_id	region/tablet.c	/^long get_last_flushed_id(Tablet* tablet)$/;"	f
+get_last_flushed_id_from_conf	region/region.c	/^long long get_last_flushed_id_from_conf(char* conf_path, char* tablet_folder)$/;"	f
+get_last_key	include/item.h	/^Key* get_last_key(ResultSet* resultSet);$/;"	p
+get_last_key	util/item.c	/^Key* get_last_key(ResultSet* resultSet)$/;"	f
+get_left_items	include/memstore.h	/^List* get_left_items(Memstore *memstore, int flushed_size);$/;"	p
+get_left_items	region/memstore.c	/^List* get_left_items(Memstore *memstore, int flushed_size)$/;"	f
+get_lines_from_text_file	include/utils.h	/^List* get_lines_from_text_file(char* file_path);$/;"	p
+get_lines_from_text_file	util/utils.c	/^List* get_lines_from_text_file(char* file_path)$/;"	f
+get_lines_from_text_file_base_on_prefix	include/utils.h	/^List* get_lines_from_text_file_base_on_prefix(char* file_path, char* prefix);$/;"	p
+get_lines_from_text_file_base_on_prefix	util/utils.c	/^List* get_lines_from_text_file_base_on_prefix(char* file_path, char* prefix)$/;"	f
+get_local_partition_free_space	include/utils.h	/^int get_local_partition_free_space();$/;"	p
+get_local_partition_free_space	util/utils.c	/^int get_local_partition_free_space()$/;"	f
+get_memstore_metadata	include/memstore.h	/^char* get_memstore_metadata(Memstore* memstore);$/;"	p
+get_memstore_metadata	region/memstore.c	/^char* get_memstore_metadata(Memstore* memstore)$/;"	f
+get_metadata_master	include/master.h	/^char* get_metadata_master();$/;"	p
+get_metadata_master	master/master.c	/^char* get_metadata_master()$/;"	f
+get_metadata_region	include/region.h	/^char* get_metadata_region(char* table_name);$/;"	p
+get_metadata_region	region/region.c	/^char* get_metadata_region(char* table_name)$/;"	f
+get_metadata_tablet	include/tablet.h	/^char* get_metadata_tablet(Tablet *tablet);$/;"	p
+get_metadata_tablet	region/tablet.c	/^char* get_metadata_tablet(Tablet *tablet)$/;"	f
+get_next_yfile_path	region/tablet.c	/^char* get_next_yfile_path(Tablet *tablet)$/;"	f
+get_param	include/rpc.h	/^byte* get_param(List* params, int index);$/;"	p
+get_param	util/rpc.c	/^byte* get_param(List* params, int index)$/;"	f
+get_port	include/utils.h	/^int get_port(char* connection_string);$/;"	p
+get_port	util/utils.c	/^int get_port(char* connection_string)$/;"	f
+get_region_info	include/conf.h	/^RegionInfo* get_region_info(List* regionInfoList, char* region_conn);$/;"	p
+get_region_info	util/conf.c	/^RegionInfo* get_region_info(List* regionInfoList, char* region_conn)$/;"	f
+get_replica_queue	util/conf.c	/^ReplicaQueue* get_replica_queue(List* replicaQueueList, int id)$/;"	f
+get_result	include/rpc.h	/^byte* get_result(RPCResponse* rpcResponse);$/;"	p
+get_result	util/rpc.c	/^byte* get_result(RPCResponse* rpcResponse)$/;"	f
+get_result_length	include/rpc.h	/^int get_result_length(RPCResponse* rpcResponse);$/;"	p
+get_result_length	util/rpc.c	/^int get_result_length(RPCResponse* rpcResponse)$/;"	f
+get_row_key	include/item.h	/^char* get_row_key(Key *key);$/;"	p
+get_row_key	util/item.c	/^char* get_row_key(Key *key)$/;"	f
+get_status_code	include/rpc.h	/^int get_status_code(RPCResponse* rpcResponse);$/;"	p
+get_status_code	util/rpc.c	/^int get_status_code(RPCResponse* rpcResponse)$/;"	f
+get_table_info	include/conf.h	/^TableInfo* get_table_info(List* tableInfoList, char* table_name);$/;"	p
+get_table_info	util/conf.c	/^TableInfo* get_table_info(List* tableInfoList, char* table_name)$/;"	f
+get_table_info_from_master	cli/cli.c	/^TableInfo* get_table_info_from_master(char* master_conn, char* table_name)$/;"	f
+get_table_info_master	include/master.h	/^TableInfo* get_table_info_master(char* table_name);$/;"	p
+get_table_name	cli/cli.c	/^char* get_table_name(char *string)$/;"	f
+get_tablet	region/region.c	/^Tablet* get_tablet(List* tabletList, char *table_name)$/;"	f
+get_tablet_by_id	region/region.c	/^Tablet* get_tablet_by_id(List* tabletList, int tablet_id)$/;"	f
+get_tablet_folder	include/tablet.h	/^char* get_tablet_folder(Tablet *tablet);$/;"	p
+get_tablet_folder	include/tablet.h	/^char* get_tablet_folder(Tablet* tablet);$/;"	p
+get_tablet_folder	region/tablet.c	/^char* get_tablet_folder(Tablet* tablet)$/;"	f
+get_tablet_id	include/tablet.h	/^short get_tablet_id(Tablet* tablet);$/;"	p
+get_tablet_id	region/tablet.c	/^short get_tablet_id(Tablet* tablet)$/;"	f
+get_tablet_id_wal_item	include/wal.h	/^short get_tablet_id_wal_item(WalItem* walItem);$/;"	p
+get_tablet_id_wal_item	region/wal.c	/^short get_tablet_id_wal_item(WalItem* walItem)$/;"	f
+get_tablet_info	include/conf.h	/^TabletInfo* get_tablet_info(List* tabletInfoList, RegionInfo* regionInfo);$/;"	p
+get_tablet_info	util/conf.c	/^TabletInfo* get_tablet_info(List* tabletInfoList, RegionInfo* regionInfo)$/;"	f
+get_tablet_used_size	master/master.c	/^int get_tablet_used_size(RegionInfo* regionInfo, char* table_name)$/;"	f
+get_timestamp	include/item.h	/^long long get_timestamp(Item *item);$/;"	p
+get_timestamp	util/item.c	/^long long get_timestamp(Item *item)$/;"	f
+get_used_size_tablet	include/tablet.h	/^int get_used_size_tablet(Tablet *tablet);$/;"	p
+get_used_size_tablet	region/tablet.c	/^int get_used_size_tablet(Tablet *tablet)$/;"	f
+get_value	include/item.h	/^char* get_value(Item *item);$/;"	p
+get_value	util/item.c	/^char* get_value(Item *item)$/;"	f
+get_yfile_metadata	include/yfile.h	/^char* get_yfile_metadata(YFile* yfile);$/;"	p
+get_yfile_metadata	region/yfile.c	/^char* get_yfile_metadata(YFile* yfile)$/;"	f
+handle_infected_tablet	master/master.c	/^boolean handle_infected_tablet(TabletInfo* infectedTabletInfo, ReplicaQueue* replicaQueue,$/;"	f
+handle_problem_regions	master/master.c	/^void handle_problem_regions(List* problemRegions, Master* master)$/;"	f
+handler_master_request	master/master.c	/^RPCResponse* handler_master_request(char *cmd, List* params)$/;"	f
+handler_region_request	region/region.c	/^RPCResponse* handler_region_request(char *cmd, List* params)$/;"	f
+help	cli/cli.c	/^void help(void)$/;"	f
+hotness_value	region/region.c	/^    int hotness_value; \/** Defined the memory duration of data block **\/$/;"	m	struct:_Region	file:
+id	include/conf.h	/^    int id; \/\/The index of the ReplicaQueue inside a table$/;"	m	struct:_ReplicaQueue
+id	region/tablet.c	/^    short id; \/** will use for wal **\/$/;"	m	struct:_Tablet	file:
+incr_item_id	region/region.c	/^    long long incr_item_id; \/** the id for putted item in the memstore and wal **\/$/;"	m	struct:_Region	file:
+index	util/buf.c	/^    int index; \/** the pointer of data, not the size of data, its usage will be varied base on the method **\/$/;"	m	struct:_Buf	file:
+indexBlock	region/yfile.c	/^    IndexBlock *indexBlock; \/\/offset = 16$/;"	m	struct:_YFile	file:
+index_block_offset	region/yfile.c	/^    size_t index_block_offset;$/;"	m	struct:_Trailer	file:
+index_count	region/yfile.c	/^    size_t index_count;$/;"	m	struct:_IndexBlock	file:
+indexs	region/yfile.c	/^    Index** indexs;$/;"	m	struct:_IndexBlock	file:
+init_buf	include/buf.h	/^Buf* init_buf();$/;"	p
+init_buf	util/buf.c	/^Buf* init_buf()$/;"	f
+init_memstore	include/memstore.h	/^Memstore* init_memstore(int id);$/;"	p
+init_memstore	region/memstore.c	/^Memstore* init_memstore(int id)$/;"	f
+init_region_struct	region/region.c	/^Region* init_region_struct(char *conf_path)$/;"	f
+init_tablet_struct	region/tablet.c	/^Tablet* init_tablet_struct(int tablet_id, char *tablet_folder)$/;"	f
+init_tokens	include/utils.h	/^Tokens* init_tokens(char *str, char deli);$/;"	p
+init_tokens	util/utils.c	/^Tokens* init_tokens(char *str, char deli)$/;"	f
+is_good_replica_queue	master/master.c	/^boolean is_good_replica_queue(ReplicaQueue* replicaQueue, List* problemRegions)$/;"	f
+item	region/wal.c	/^    Item* item;$/;"	m	struct:_WalItem	file:
+item_id	region/wal.c	/^    long long item_id; \/** the item id that stored in this region **\/$/;"	m	struct:_WalItem	file:
+item_size	region/yfile.c	/^    size_t item_size; \/** No Persistence**\/$/;"	m	struct:_DataBlock	file:
+item_size	region/yfile.c	/^    size_t item_size;$/;"	m	struct:_Index	file:
+item_to_byte	util/item.c	/^Buf* item_to_byte(Item* item)$/;"	f
+items	include/item.h	/^    Item **items;$/;"	m	struct:_ResultSet
+items	region/memstore.c	/^    Item** items; \/**used array for better searching and sorting, since the store will be very big**\/$/;"	m	struct:_Memstore	file:
+items	region/yfile.c	/^    Item **items;$/;"	m	struct:_DataBlock	file:
+just_free	include/list.h	/^void just_free(void *p);$/;"	p
+just_free	util/list.c	/^void just_free(void *p)$/;"	f
+key	util/item.c	/^    Key *key;$/;"	m	struct:_Item	file:
+key_and_value_list_to_line	util/conf.c	/^char* key_and_value_list_to_line(char *key, List* valueList)$/;"	f
+key_and_value_to_line	util/conf.c	/^char* key_and_value_to_line(char* key, char* value)$/;"	f
+key_to_byte	util/item.c	/^Buf* key_to_byte(Key *key)$/;"	f
+lastKey	region/yfile.c	/^    Key* lastKey; \/** mainly used as bloom filter**\/$/;"	m	struct:_Trailer	file:
+lastKey	region/yfile.c	/^    Key* lastKey;$/;"	m	struct:_Index	file:
+last_flushed_id	region/tablet.c	/^    long long last_flushed_id; \/** the it of last item has been flushed to yfile **\/$/;"	m	struct:_Tablet	file:
+last_visited_timestamp	region/yfile.c	/^    long long last_visited_timestamp; \/** Used for Hotness Caching **\/$/;"	m	struct:_DataBlock	file:
+list_add	include/list.h	/^void list_add(List* thiz, void* data);$/;"	p
+list_add	util/list.c	/^void list_add(List* thiz, void* data)$/;"	f
+list_append	include/list.h	/^void list_append(List* thiz, void* data);$/;"	p
+list_append	util/list.c	/^void list_append(List* thiz, void* data)$/;"	f
+list_create	include/list.h	/^List* list_create(void);$/;"	p
+list_create	util/list.c	/^List* list_create(void)$/;"	f
+list_destory	include/list.h	/^void list_destory(List* thiz, void (*free_object)(void *object));$/;"	p
+list_destory	util/list.c	/^void list_destory(List* thiz, void (*free_object)(void *object))$/;"	f
+list_find	include/list.h	/^void* list_find(List* thiz, void* target, boolean(*matchs)(void *object, void *target));$/;"	p
+list_find	util/list.c	/^void* list_find(List* thiz, void* target, boolean(*match)(void *object, void *target))$/;"	f
+list_find_all	include/list.h	/^List* list_find_all(List* thiz, void* target, boolean(*match)(void *object, void *target));$/;"	p
+list_find_all	util/list.c	/^List* list_find_all(List* thiz, void* target, boolean(*match)(void *object, void *target))$/;"	f
+list_get	include/list.h	/^void* list_get(List* thiz, int index);$/;"	p
+list_get	util/list.c	/^void* list_get(List* thiz, int index)$/;"	f
+list_next	include/list.h	/^void* list_next(List* thiz);$/;"	p
+list_next	util/list.c	/^void* list_next(List* thiz)$/;"	f
+list_next_node	util/list.c	/^ListNode* list_next_node(List* thiz)$/;"	f
+list_remove	include/list.h	/^boolean list_remove(List* thiz, void* data, void (*free_object)(void *object));$/;"	p
+list_remove	util/list.c	/^boolean list_remove(List* thiz, void* data, void (*free_object)(void *object))$/;"	f
+list_replace	include/list.h	/^void list_replace(List* thiz, void* old_data, void* new_data);$/;"	p
+list_replace	util/list.c	/^void list_replace(List* thiz, void* old_data, void* new_data)$/;"	f
+list_rewind	include/list.h	/^void list_rewind(List* thiz);$/;"	p
+list_rewind	util/list.c	/^void list_rewind(List* thiz)$/;"	f
+list_size	include/list.h	/^int list_size(List* thiz);$/;"	p
+list_size	util/list.c	/^int list_size(List* thiz)$/;"	f
+list_sort	include/list.h	/^List* list_sort(List* thiz);$/;"	p
+list_sort	util/list.c	/^List* list_sort(List* thiz)$/;"	f
+list_to_array	include/list.h	/^void** list_to_array(List* thiz);$/;"	p
+list_to_array	util/list.c	/^void** list_to_array(List* thiz)$/;"	f
+list_to_string	include/utils.h	/^char* list_to_string(List* list);$/;"	p
+list_to_string	util/utils.c	/^char* list_to_string(List* list)$/;"	f
+list_to_string_by_token	include/utils.h	/^char* list_to_string_by_token(List* list, char token);$/;"	p
+list_to_string_by_token	util/utils.c	/^char* list_to_string_by_token(List* list, char token)$/;"	f
+load_cli_cache	cli/cli.c	/^void load_cli_cache(char* conf_path)$/;"	f
+load_data_block	region/yfile.c	/^DataBlock* load_data_block(YFile *yfile, int index_pos, FILE *fp)$/;"	f
+load_index	region/yfile.c	/^Index* load_index(FILE *fp)$/;"	f
+load_index_block	region/yfile.c	/^IndexBlock* load_index_block(int index_block_offset, FILE *fp)$/;"	f
+load_local_region	region/region.c	/^void load_local_region(char *conf_path)$/;"	f
+load_log_wal	include/wal.h	/^List* load_log_wal(Wal *wal);$/;"	p
+load_log_wal	region/wal.c	/^List* load_log_wal(Wal *wal)$/;"	f
+load_master	master/master.c	/^void load_master(char *conf_path)$/;"	f
+load_region_info_list	include/conf.h	/^List* load_region_info_list(char* file_path);$/;"	p
+load_region_info_list	util/conf.c	/^List* load_region_info_list(char* file_path)$/;"	f
+load_table_info_list	include/conf.h	/^List* load_table_info_list(char *file_path);$/;"	p
+load_table_info_list	util/conf.c	/^List* load_table_info_list(char *file_path)$/;"	f
+load_tablet	include/tablet.h	/^Tablet* load_tablet(char *tablet_folder);$/;"	p
+load_tablet	region/tablet.c	/^Tablet* load_tablet(char *tablet_folder)$/;"	f
+load_trailer	region/yfile.c	/^Trailer* load_trailer(FILE *fp)$/;"	f
+load_wal	include/wal.h	/^Wal* load_wal(char* file_path);$/;"	p
+load_wal	region/wal.c	/^Wal* load_wal(char* file_path)$/;"	f
+load_wal_item	region/wal.c	/^WalItem* load_wal_item(FILE* fp)$/;"	f
+loading_yfile	include/yfile.h	/^YFile* loading_yfile(char* file_path);$/;"	p
+loading_yfile	region/yfile.c	/^YFile* loading_yfile(char* file_path)$/;"	f
+logSetting	util/log.c	/^LogSetting *logSetting = NULL; \/*Init*\/$/;"	v
+log_file_path	util/log.c	/^    char* log_file_path;$/;"	m	struct:_LogSetting	file:
+log_level	util/log.c	/^    int log_level;$/;"	m	struct:_LogSetting	file:
+logg	include/log.h	/^void logg(int level, const char *fmt, ...);$/;"	p
+logg	util/log.c	/^void logg(int level, const char *fmt, ...)$/;"	f
+m_cats	include/utils.h	/^char* m_cats(int size, ...);$/;"	p
+m_cats	util/utils.c	/^char* m_cats(int size, ...)$/;"	f
+m_clone_item	include/item.h	/^Item* m_clone_item(Item* item);$/;"	p
+m_clone_item	util/item.c	/^Item* m_clone_item(Item* item)$/;"	f
+m_clone_key	include/item.h	/^Key* m_clone_key(Key* key);$/;"	p
+m_clone_key	util/item.c	/^Key* m_clone_key(Key* key)$/;"	f
+m_combine_result_set	include/item.h	/^ResultSet* m_combine_result_set(ResultSet* set0, ResultSet* set1);$/;"	p
+m_combine_result_set	util/item.c	/^ResultSet* m_combine_result_set(ResultSet* leftSet, ResultSet* rightSet)$/;"	f
+m_cpy	include/utils.h	/^char* m_cpy(char *src);$/;"	p
+m_cpy	util/utils.c	/^char* m_cpy(char *src)$/;"	f
+m_create_item	include/item.h	/^Item* m_create_item(char *row_key, char*column_name, char* value);$/;"	p
+m_create_item	util/item.c	/^Item* m_create_item(char *row_key, char *column_name, char *value)$/;"	f
+m_create_result_set	include/item.h	/^ResultSet* m_create_result_set(int item_size, Item **items);$/;"	p
+m_create_result_set	util/item.c	/^ResultSet *m_create_result_set(int item_size, Item **items)$/;"	f
+m_ctos	include/utils.h	/^char* m_ctos(char chr);$/;"	p
+m_ctos	util/utils.c	/^char* m_ctos(char chr)$/;"	f
+m_get_buf_string	include/buf.h	/^char* m_get_buf_string(Buf *buf);$/;"	p
+m_get_buf_string	util/buf.c	/^char* m_get_buf_string(Buf *buf)$/;"	f
+m_get_file_name_by_ext	include/utils.h	/^char* m_get_file_name_by_ext(char* folder, char* ext);$/;"	p
+m_get_file_name_by_ext	util/utils.c	/^char* m_get_file_name_by_ext(char* folder, char* ext)$/;"	f
+m_get_ip_address	include/utils.h	/^char* m_get_ip_address(char* connection_string);$/;"	p
+m_get_ip_address	util/utils.c	/^char* m_get_ip_address(char* connection_string)$/;"	f
+m_get_key	util/conf.c	/^char* m_get_key(char* line)$/;"	f
+m_get_value	util/conf.c	/^char* m_get_value(char* line)$/;"	f
+m_get_value_by_key	include/conf.h	/^char* m_get_value_by_key(char *file_path, char* target_key);$/;"	p
+m_get_value_by_key	util/conf.c	/^char* m_get_value_by_key(char *file_path, char* target_key)$/;"	f
+m_item_list_to_result_set	include/item.h	/^ResultSet *m_item_list_to_result_set(List* itemList);$/;"	p
+m_item_list_to_result_set	util/item.c	/^ResultSet *m_item_list_to_result_set(List* itemList)$/;"	f
+m_itos	include/utils.h	/^char* m_itos(int num);$/;"	p
+m_itos	util/utils.c	/^char* m_itos(int num)$/;"	f
+m_lltos	include/utils.h	/^char* m_lltos(long long num);$/;"	p
+m_lltos	util/utils.c	/^char* m_lltos(long long num)$/;"	f
+m_load_item	include/item.h	/^Item* m_load_item(FILE *fp);$/;"	p
+m_load_item	util/item.c	/^Item* m_load_item(FILE *fp)$/;"	f
+m_load_key	include/item.h	/^Key* m_load_key(FILE *fp);$/;"	p
+m_load_key	util/item.c	/^Key* m_load_key(FILE *fp)$/;"	f
+m_load_txt_file_to_memory	include/utils.h	/^char* m_load_txt_file_to_memory(char *file_path);$/;"	p
+m_load_txt_file_to_memory	util/utils.c	/^char* m_load_txt_file_to_memory(char *file_path)$/;"	f
+m_region_info_list_to_string	util/conf.c	/^char* m_region_info_list_to_string(List* regionInfoList)$/;"	f
+m_region_info_to_string	util/conf.c	/^char* m_region_info_to_string(RegionInfo *regionInfo)$/;"	f
+m_replica_queue_to_string	util/conf.c	/^char* m_replica_queue_to_string(ReplicaQueue* replicaQueue)$/;"	f
+m_tablet_info_to_string	util/conf.c	/^char* m_tablet_info_to_string(TabletInfo* tabletInfo)$/;"	f
+magic	include/item.h	/^    byte magic[8];$/;"	m	struct:_ResultSet
+magic	region/wal.c	/^    byte magic[8];$/;"	m	struct:_Wal	file:
+magic	region/yfile.c	/^    byte magic[8];$/;"	m	struct:_DataBlock	file:
+magic	region/yfile.c	/^    byte magic[8];$/;"	m	struct:_IndexBlock	file:
+magic	region/yfile.c	/^    byte magic[8];$/;"	m	struct:_Trailer	file:
+magic	util/rpc.c	/^    char magic[8];$/;"	m	struct:_RPCRequest	file:
+magic	util/rpc.c	/^    char magic[8];$/;"	m	struct:_RPCResponse	file:
+main	cli/cli.c	/^int main(int argc, char **argv)$/;"	f
+main	master/master.c	/^int main(int argc, char *argv[])$/;"	f
+main	region/region.c	/^int main(int argc, char *argv[])$/;"	f
+malloc2	include/malloc2.h	/^void* malloc2(size_t size);$/;"	p
+malloc2	util/malloc2.c	/^void* malloc2(size_t size)$/;"	f
+mallocs	include/malloc2.h	/^void* mallocs(size_t size);$/;"	p
+mallocs	util/malloc2.c	/^void* mallocs(size_t size)$/;"	f
+masterInst	master/master.c	/^Master *masterInst = NULL;$/;"	v
+master_conn	cli/cli.c	/^    char* master_conn;$/;"	m	struct:_CliCache	file:
+master_daemon_thread	master/master.c	/^void* master_daemon_thread(void* nul)$/;"	f
+match	include/utils.h	/^boolean match(char* dest, char *src);$/;"	p
+match	util/utils.c	/^boolean match(char* dest, char *src)$/;"	f
+match_by_timestamps	include/item.h	/^boolean match_by_timestamps(long long src_begin_timestamp, long long src_end_timestamp,$/;"	p
+match_by_timestamps	util/item.c	/^boolean match_by_timestamps(long long src_begin_timestamp, long long src_end_timestamp,$/;"	f
+match_for_list_find	include/utils.h	/^boolean match_for_list_find(void* dest, void *src);$/;"	p
+match_for_list_find	util/utils.c	/^boolean match_for_list_find(void* dest, void *src)$/;"	f
+match_int	include/utils.h	/^int match_int(char* dest, char* src);$/;"	p
+match_int	util/utils.c	/^int match_int(char* dest, char* src)$/;"	f
+match_region	util/conf.c	/^boolean match_region(void *destRegionInfo, void *srcRegionConn)$/;"	f
+match_replica_queue	util/conf.c	/^boolean match_replica_queue(void *replicaQueue_void, void *id)$/;"	f
+match_table_info	util/conf.c	/^boolean match_table_info(void *tableInfo_void, void *table_name)$/;"	f
+match_tablet	include/tablet.h	/^boolean match_tablet(Tablet *tablet, char* table_name);$/;"	p
+match_tablet	region/tablet.c	/^boolean match_tablet(Tablet *tablet, char* table_name)$/;"	f
+match_tablet_by_table_name	include/tablet.h	/^boolean match_tablet_by_table_name(Tablet *tablet, char* table_name);$/;"	p
+match_tablet_by_table_name	region/tablet.c	/^boolean match_tablet_by_table_name(Tablet *tablet, char* table_name)$/;"	f
+match_tablet_info	include/conf.h	/^boolean match_tablet_info(void *tabletInfo_void, void *regionInfo);$/;"	p
+match_tablet_info	util/conf.c	/^boolean match_tablet_info(void *tabletInfo_void, void *regionInfo)$/;"	f
+match_tail	include/utils.h	/^boolean match_tail(char* dest, char *src);$/;"	p
+match_tail	util/utils.c	/^boolean match_tail(char* dest, char *src)$/;"	f
+max	include/utils.h	/^int max(int a, int b);$/;"	p
+max	util/utils.c	/^int max(int a, int b)$/;"	f
+max_allocated_size	region/memstore.c	/^    size_t max_allocated_size; \/** the threshold for flushing, and will be assigned by the tablet **\/$/;"	m	struct:_Memstore	file:
+max_item_id	region/tablet.c	/^    long long max_item_id; \/** current max item id in the tablet and memstore **\/$/;"	m	struct:_Tablet	file:
+max_size	region/region.c	/^    int max_size; \/** The UNIT is MB, the max size of disk usage has been defined in the conf file**\/$/;"	m	struct:_Region	file:
+memstore	region/tablet.c	/^    Memstore *memstore;$/;"	m	struct:_Tablet	file:
+memstore_full	include/memstore.h	/^boolean memstore_full(Memstore* memstore);$/;"	p
+memstore_full	region/memstore.c	/^boolean memstore_full(Memstore* memstore)$/;"	f
+move_pointer	include/utils.h	/^char* move_pointer(char* pointer, int div);$/;"	p
+move_pointer	util/utils.c	/^char* move_pointer(char* pointer, int div)$/;"	f
+need_to_reload_wal	include/wal.h	/^boolean need_to_reload_wal(Wal *wal);$/;"	p
+need_to_reload_wal	region/wal.c	/^boolean need_to_reload_wal(Wal *wal)$/;"	f
+next	util/list.c	/^    struct _ListNode *next;$/;"	m	struct:_ListNode	typeref:struct:_ListNode::_ListNode	file:
+offset	region/yfile.c	/^    size_t offset;$/;"	m	struct:_Index	file:
+only_free_struct	include/list.h	/^void only_free_struct(void *p);$/;"	p
+only_free_struct	util/list.c	/^void only_free_struct(void *p){};$/;"	f
+oom	util/malloc2.c	/^void oom(size_t size)$/;"	f
+params	util/rpc.c	/^    List *params;$/;"	m	struct:_RPCRequest	file:
+params_to_byte	util/rpc.c	/^Buf* params_to_byte(List* params)$/;"	f
+port	master/master.c	/^    int port;$/;"	m	struct:_Master	file:
+port	region/region.c	/^    int port;$/;"	m	struct:_Region	file:
+prev	util/list.c	/^    struct _ListNode *prev;$/;"	m	struct:_ListNode	typeref:struct:_ListNode::_ListNode	file:
+print_result_set_in_nice_format	include/item.h	/^void print_result_set_in_nice_format(ResultSet* resultSet);$/;"	p
+print_result_set_in_nice_format	util/item.c	/^void print_result_set_in_nice_format(ResultSet* resultSet)$/;"	f
+process	cli/cli.c	/^char* process(char *cmd)$/;"	f
+put	cli/cli.c	/^char* put(Tokens* space_tokens)$/;"	f
+put_data_region	include/region.h	/^boolean put_data_region(char *table_name, ResultSet* resultSet);$/;"	p
+put_data_region	region/region.c	/^boolean put_data_region(char *table_name, ResultSet* resultSet)$/;"	f
+put_tablet	include/tablet.h	/^void put_tablet(Tablet *tablet, long incr_item_id, Item *item);$/;"	p
+put_tablet	region/tablet.c	/^void put_tablet(Tablet *tablet, long incr_item_id, Item *item)$/;"	f
+query_all_region	include/region.h	/^ResultSet* query_all_region(char* table_name);$/;"	p
+query_all_region	region/region.c	/^ResultSet* query_all_region(char* table_name)$/;"	f
+query_memstore_by_row_key	include/memstore.h	/^ResultSet* query_memstore_by_row_key(Memstore* memstore, char* row_key);$/;"	p
+query_memstore_by_row_key	region/memstore.c	/^ResultSet* query_memstore_by_row_key(Memstore* memstore, char* row_key)$/;"	f
+query_memstore_by_timestamp	include/memstore.h	/^ResultSet* query_memstore_by_timestamp(Memstore* memstore, long long begin_timestamp, $/;"	p
+query_memstore_by_timestamp	region/memstore.c	/^ResultSet* query_memstore_by_timestamp(Memstore* memstore, long long begin_timestamp,$/;"	f
+query_row_region	include/region.h	/^ResultSet* query_row_region(char* table_name, char* row_key);$/;"	p
+query_row_region	region/region.c	/^ResultSet* query_row_region(char* table_name, char* row_key)$/;"	f
+query_table	cli/cli.c	/^ResultSet* query_table(CliCache *cliCache, TableInfo* tableInfo, char *row_key)$/;"	f
+query_tablet_all	include/tablet.h	/^ResultSet* query_tablet_all(Tablet *tablet);$/;"	p
+query_tablet_all	region/tablet.c	/^ResultSet* query_tablet_all(Tablet *tablet)$/;"	f
+query_tablet_by_timestamp	include/tablet.h	/^ResultSet* query_tablet_by_timestamp(Tablet *tablet, long long begin_timestamp, long long end_timestamp);$/;"	p
+query_tablet_by_timestamp	region/tablet.c	/^ResultSet* query_tablet_by_timestamp(Tablet *tablet, long long begin_timestamp, long long end_timestamp)$/;"	f
+query_tablet_row_key	include/tablet.h	/^ResultSet* query_tablet_row_key(Tablet *tablet, char* row_key);$/;"	p
+query_tablet_row_key	region/tablet.c	/^ResultSet* query_tablet_row_key(Tablet *tablet, char* row_key)$/;"	f
+query_yfile_by_row_key	include/yfile.h	/^ResultSet* query_yfile_by_row_key(YFile* yfile, char* row_key);$/;"	p
+query_yfile_by_row_key	region/yfile.c	/^ResultSet* query_yfile_by_row_key(YFile* yfile, char* row_key)$/;"	f
+query_yfile_by_timestamp	include/yfile.h	/^ResultSet* query_yfile_by_timestamp(YFile* yfile, long long begin_timestamp, long long end_timestamp);$/;"	p
+query_yfile_by_timestamp	region/yfile.c	/^ResultSet* query_yfile_by_timestamp(YFile* yfile, long long begin_timestamp, long long end_timestamp)$/;"	f
+query_yfiles_by_row_key	region/tablet.c	/^ResultSet* query_yfiles_by_row_key(List* yfileList, char *row_key)$/;"	f
+query_yfiles_by_timestamp	region/tablet.c	/^ResultSet* query_yfiles_by_timestamp(List* yfileList, long long begin_timestamp, long long end_timestamp)$/;"	f
+realloc2	include/malloc2.h	/^void* realloc2(void* ptr, size_t size);$/;"	p
+realloc2	util/malloc2.c	/^void* realloc2(void* ptr, size_t size)$/;"	f
+refresh_tablet	include/tablet.h	/^void refresh_tablet(Tablet *tablet, int hotnessValue);$/;"	p
+refresh_tablet	region/tablet.c	/^void refresh_tablet(Tablet *tablet, int hotnessValue)$/;"	f
+refresh_wal	include/wal.h	/^void refresh_wal(Wal *wal, List* walItems);$/;"	p
+refresh_wal	region/wal.c	/^void refresh_wal(Wal *wal, List* walItems)$/;"	f
+refresh_yfile_data_block_cache	include/yfile.h	/^void refresh_yfile_data_block_cache(YFile* yfile, int hotness_value);$/;"	p
+refresh_yfile_data_block_cache	region/yfile.c	/^void refresh_yfile_data_block_cache(YFile* yfile, int hotness_value)$/;"	f
+regionInfo	include/conf.h	/^    RegionInfo *regionInfo; \/* a pointer *\/$/;"	m	struct:_TabletInfo
+regionInfoList	master/master.c	/^    List* regionInfoList;$/;"	m	struct:_Master	file:
+regionInst	region/region.c	/^Region *regionInst = NULL;$/;"	v
+region_has_problem	master/master.c	/^boolean region_has_problem(RegionInfo* regionInfo)$/;"	f
+reload_wal_to_tablet	region/region.c	/^int reload_wal_to_tablet(Wal* wal, List* tabletList)$/;"	f
+replicaQueueList	include/conf.h	/^    List* replicaQueueList;$/;"	m	struct:_TableInfo
+reset_log_wal	include/wal.h	/^void reset_log_wal(Wal *wal);$/;"	p
+resize_indexs	region/yfile.c	/^IndexBlock* resize_indexs(IndexBlock *indexBlock, int target_size)$/;"	f
+result	util/rpc.c	/^    byte* result;$/;"	m	struct:_RPCResponse	file:
+result_length	util/rpc.c	/^    int result_length; \/** used in serializing and deserializing**\/$/;"	m	struct:_RPCResponse	file:
+result_set_to_byte	include/item.h	/^Buf* result_set_to_byte(ResultSet* resultSet);$/;"	p
+result_set_to_byte	util/item.c	/^Buf* result_set_to_byte(ResultSet* resultSet)$/;"	f
+row_key	util/item.c	/^    char* row_key;$/;"	m	struct:_Key	file:
+row_key_len	util/item.c	/^    short row_key_len;$/;"	m	struct:_Key	file:
+rpc_request_to_byte	util/rpc.c	/^Buf* rpc_request_to_byte(RPCRequest* rpcRequest)$/;"	f
+rpc_response_to_byte	util/rpc.c	/^Buf* rpc_response_to_byte(RPCResponse *rpcResponse)$/;"	f
+search_and_update_table_info	cli/cli.c	/^TableInfo* search_and_update_table_info(CliCache* cliCache, char* table_name)$/;"	f
+search_timestamp	region/yfile.c	/^long long search_timestamp(IndexBlock* indexBlock, boolean begin)$/;"	f
+serving	include/conf.h	/^    boolean serving;$/;"	m	struct:_RegionInfo
+setTcpKeepAlive	util/rpc.c	/^void setTcpKeepAlive(int sockfd)$/;"	f
+setTcpNoDelay	util/rpc.c	/^void setTcpNoDelay(int sockfd)$/;"	f
+setTcpReuse	util/rpc.c	/^void setTcpReuse(int sockfd)$/;"	f
+set_last_flushed_id	include/tablet.h	/^void set_last_flushed_id(Tablet* tablet, long long last_flushed_id);$/;"	p
+set_last_flushed_id	region/tablet.c	/^void set_last_flushed_id(Tablet* tablet, long long last_flushed_id)$/;"	f
+set_max_item_id	include/tablet.h	/^void set_max_item_id(Tablet* tablet, long long max_item_id);$/;"	p
+set_max_item_id	region/tablet.c	/^void set_max_item_id(Tablet* tablet, long long max_item_id)$/;"	f
+setup_logging	include/log.h	/^void setup_logging(int log_level, char* log_file_path);$/;"	p
+setup_logging	util/log.c	/^void setup_logging(int log_level, char* log_file_path)$/;"	f
+show	cli/cli.c	/^char* show(Tokens* space_tokens)$/;"	f
+show_master_metadata	cli/cli.c	/^void show_master_metadata(CliCache* cliCache)$/;"	f
+show_table_metadata	cli/cli.c	/^void show_table_metadata(TableInfo* tableInfo)$/;"	f
+silent_mode	cli/cli.c	/^void silent_mode(int argc, char** argv)$/;"	f
+size	include/item.h	/^    int size;$/;"	m	struct:_ResultSet
+size	include/utils.h	/^    int size;$/;"	m	struct:_Tokens
+sort_memstore	include/memstore.h	/^void sort_memstore(Memstore* memstore);$/;"	p
+sort_memstore	region/memstore.c	/^void sort_memstore(Memstore* memstore)$/;"	f
+sort_region_info_list	master/master.c	/^List* sort_region_info_list(List* regionInfoList)$/;"	f
+sorted_size	region/memstore.c	/^    size_t sorted_size;  \/** the cursor for defining the sorted mark **\/$/;"	m	struct:_Memstore	file:
+start_cli_daemon	cli/cli.c	/^void start_cli_daemon()$/;"	f
+start_daemon	util/rpc.c	/^void start_daemon(int listenfd, RPCResponse* (*handler_request)(char *cmd, List* params))$/;"	f
+start_server_master	master/master.c	/^void start_server_master()$/;"	f
+start_server_region	region/region.c	/^void start_server_region()$/;"	f
+start_sync_job	master/master.c	/^boolean start_sync_job(char* src_conn, char* target_conn, char* table_name,$/;"	f
+start_sync_region	include/region.h	/^boolean start_sync_region(char* target_conn, char* table_name, long long begin_timestamp, long long end_timestamp);$/;"	p
+start_sync_region	region/region.c	/^boolean start_sync_region(char* target_conn, char* table_name, long long begin_timestamp, long long end_timestamp)$/;"	f
+startup	include/rpc.h	/^void startup(int servPort, RPCResponse* (*handler_request)(char *cmd, List* params));$/;"	p
+startup	util/rpc.c	/^void startup(int servPort, RPCResponse* (*handler_request)(char *cmd, List* params))$/;"	f
+status_code	util/rpc.c	/^    int status_code; \/*  *\/$/;"	m	struct:_RPCResponse	file:
+stob	include/utils.h	/^boolean stob(char* bool_str);$/;"	p
+stob	util/utils.c	/^boolean stob(char* bool_str)$/;"	f
+string_to_list	include/utils.h	/^List* string_to_list(char* string);$/;"	p
+string_to_list	util/utils.c	/^List* string_to_list(char* list_string)$/;"	f
+string_to_region_info	util/conf.c	/^RegionInfo* string_to_region_info(char* string)$/;"	f
+string_to_region_info_list	util/conf.c	/^List* string_to_region_info_list(char* string)$/;"	f
+string_to_replica_queue	util/conf.c	/^ReplicaQueue* string_to_replica_queue(int id, char* string)$/;"	f
+string_to_table_info	include/conf.h	/^TableInfo* string_to_table_info(char* table_name, List* lines);$/;"	p
+string_to_table_info	util/conf.c	/^TableInfo* string_to_table_info(char* table_name, List* lines)$/;"	f
+string_to_tablet_info	util/conf.c	/^TabletInfo* string_to_tablet_info(char* string)$/;"	f
+swap_pointer	include/global.h	39;"	d
+sync_job	region/region.c	/^void* sync_job(void* syncJob_void)$/;"	f
+tableInfoList	cli/cli.c	/^    List* tableInfoList;$/;"	m	struct:_CliCache	file:
+tableInfoList	master/master.c	/^    List* tableInfoList;$/;"	m	struct:_Master	file:
+table_info_list_to_string	util/conf.c	/^char* table_info_list_to_string(List* tableInfoList)$/;"	f
+table_info_to_string	include/conf.h	/^char* table_info_to_string(TableInfo *tableInfo);$/;"	p
+table_info_to_string	util/conf.c	/^char* table_info_to_string(TableInfo *tableInfo)$/;"	f
+table_name	include/conf.h	/^    char* table_name;$/;"	m	struct:_SyncJob
+table_name	include/conf.h	/^    char* table_name;$/;"	m	struct:_TableInfo
+table_name	region/tablet.c	/^    char* table_name;$/;"	m	struct:_Tablet	file:
+table_name	region/yfile.c	/^    byte* table_name;$/;"	m	struct:_Trailer	file:
+table_name_len	region/yfile.c	/^    short table_name_len;$/;"	m	struct:_Trailer	file:
+tabletInfoList	include/conf.h	/^    List* tabletInfoList;$/;"	m	struct:_ReplicaQueue
+tabletList	region/region.c	/^    List* tabletList; \/**only used in region server**\/$/;"	m	struct:_Region	file:
+tablet_exist	region/region.c	/^boolean tablet_exist(List* tabletList, char *table_name)$/;"	f
+tablet_id	region/memstore.c	/^    int tablet_id; \/** Used for logging information purpose **\/$/;"	m	struct:_Memstore	file:
+tablet_id	region/wal.c	/^    short tablet_id; \/** indicate the wal item belong to which tablet **\/$/;"	m	struct:_WalItem	file:
+tablet_used_size_region	include/region.h	/^int tablet_used_size_region(char* table_name);$/;"	p
+tablet_used_size_region	region/region.c	/^int tablet_used_size_region(char* table_name)$/;"	f
+target_conn	include/conf.h	/^    char* target_conn;$/;"	m	struct:_SyncJob
+timestamp	util/item.c	/^    long long timestamp;$/;"	m	struct:_Key	file:
+tokens	include/utils.h	/^    char** tokens;$/;"	m	struct:_Tokens
+total_item_num	region/yfile.c	/^    size_t total_item_num; \/** Calculate the total number of stored item **\/$/;"	m	struct:_Trailer	file:
+trailer	region/yfile.c	/^    Trailer *trailer; \/\/offset = 0$/;"	m	struct:_YFile	file:
+trailer_offset	region/yfile.c	/^    size_t trailer_offset; \/** used for locating the trailer **\/$/;"	m	struct:_Trailer	file:
+trim	include/utils.h	/^char* trim(char *str, char deli);$/;"	p
+trim	util/utils.c	/^char* trim(char *str, char deli)$/;"	f
+true	include/global.h	33;"	d
+true_str	include/global.h	36;"	d
+update_master_info	master/master.c	/^void update_master_info(Master* master)$/;"	f
+update_region_info	master/master.c	/^void update_region_info(RegionInfo* regionInfo)$/;"	f
+update_table_info_list	cli/cli.c	/^void update_table_info_list(CliCache* cliCache)$/;"	f
+used_size	region/memstore.c	/^    size_t used_size; \/** the number of slots has been used **\/$/;"	m	struct:_Memstore	file:
+used_size	region/region.c	/^    int used_size; \/** The UNIT is MB, the current disk usage **\/$/;"	m	struct:_Region	file:
+used_size	region/tablet.c	/^    int used_size; \/**the size will preallocted the max size for wal log, such as 64MB**\/$/;"	m	struct:_Tablet	file:
+val_len	util/item.c	/^    int val_len; \/** If the val_len is 0, means the item is the deletion mark **\/$/;"	m	struct:_Item	file:
+validate_item	include/item.h	/^boolean validate_item(Item* item);$/;"	p
+validate_item	util/item.c	/^boolean validate_item(Item* item)$/;"	f
+value	util/item.c	/^    byte *value;$/;"	m	struct:_Item	file:
+wal	region/region.c	/^    Wal* wal;$/;"	m	struct:_Region	file:
+wal_file_path	region/wal.c	/^    char *wal_file_path; \/** used to locate the wal file **\/$/;"	m	struct:_Wal	file:
+yfileList	region/tablet.c	/^    List *yfileList;$/;"	m	struct:_Tablet	file:

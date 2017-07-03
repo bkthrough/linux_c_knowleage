@@ -1,0 +1,28 @@
+	1.文件描述符：0,1,2分别代表标准输入，标准输出以及错误输出，后面的文件在3的基础上累加。查看最大文件systemctl -a |grep file.max
+fs.file-max = 376453
+用户的界面    进程process
+		|
+	      库lib
+		|
+	      系统函数
+
+内核空间     vfs虚拟文件系统
+	硬盘 ext2/3/4  xfs
+	内存 /proc
+	网络 /nfs
+	2.ulimit -a查看内存文件cpu等等的上限
+
+	3.df -T可以查看文件类型
+
+	4.find 文件 -name 名字 &> 文件a
+可以把文件的正确以及错误都输出到文件a中。
+ find 文件 -name 名字 > 文件a 2>&1
+与上面实现功能一样
+>>表示继续粘贴文件中
+>直接覆盖
+
+	5.watch -n 秒 tail -n 10 /etc/passwd 刷新
+
+	6.可以写一个.c文件做SHA加密的一个密码，在mima.c里
+
+

@@ -1,0 +1,40 @@
+	1.（1）软链接：ln -s 源文件 链接的文件
+软链接诶类似于快捷方式，两个文件的idnode不同，打开链接文件的时候最终打开的是源文件，源文件被删除那么链接文件也不可用
+（2）硬链接：ln 源文件 链接的文件
+硬链接出来的文件idnode两者相同，删除一个文件并不影响另一个文件。
+硬链接不可以对目录，因为占用的磁盘会过大;也不可以对不同文件类型，因为查找的时候inode相同系统会出错
+	
+	2.在网页上下载东西：httpd
+cd到/var/www/html中创建一个软链接
+打开httpd服务，这个时候就可以通过访问 ip/文件 来获取软链接的文件了。
+	3./etc/init.d/进程 start与 systemctl start 进程
+两者的目的都相同，但是后者速度远远快于前者，因为前者是串行处理线程，而后者并行处理线程。
+	4.sudo命令是让使用者可以使用更高权限的命令，visudo
+找到这一行：root    ALL=(ALL)       ALL
+下面添加：
+	用户名     主机名=（给权限的用户名）   所拥有的权限
+主机名通过hostname查找
+例：
+hzy     hzywolf=(root) /usr/sbin/useradd,/usr/sbin/userdel
+	5.dd命令分区
+dd if=/dev/zero of=/文件名  bs=1024K count=数字
+if是inputfile，of是outputfile  bs=1024K是块大小，count=数字  表示分区了bs×数字大小的分区
+mkfs.文件类型  文件
+把文件改为某个文件类型
+mount -o loop /文件   /文件
+就挂载成功了
+可以写一个脚本来测试可以存在多少个inode
+#!/bin/bash
+
+for((i=1; ;i++))
+do 
+    if [ $? -eq 0 ];then
+        echo "this is file_$i" >/tmp/file_$i
+    else
+        exit
+    fi
+done
+
+
+
+

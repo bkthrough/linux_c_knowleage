@@ -1,0 +1,35 @@
+个人感觉库就是接口实现
+动态库：
+    优点：
+    1.节省空间，多个程序可以用同一个内存上的库
+    2.不用重新编译，如果是静态库就需要整个再重新编译一次
+    缺点：
+    程序移植的时候也要把整个动态库移植过来
+    程序编译运行稍慢
+动态库位置：/lib64
+查看进程使用的动态库
+pmap [pid]
+strace ./程序
+
+生成一个动态库
+    gcc -fpic -shared  文件.c  -o  lib文件.so
+pic(position independence code)位置无关代码。
+文件外的数据访问和模块调用或转移是通过got(global offset table)实现的
+got是一个指针数组
+    /sbin/ldconfig (文件的绝对路径的dirname)
+    加载到内存，或者把它放到/lib64 或者/etc/ld.so.conf 里面加入信息
+    或者通过LD_LIBRARY_PATH设置临时的环境变量
+    比如：export LD_LIBRARY_PATH=/usr/local/mysql/lib
+    gcc 源文件 -o 目标文件 -l文件 -L(文件的绝对路径的dirname)
+
+静态库
+    /usr/lib64和/usr/lib里面有
+    .a结尾的文件
+    编译时通过链接。
+    分为：(1).符号解析:把每个符号对应的定义的位置找到，但是动态链接的除外
+          (2).重定位:重新定位符号的位置，把他们重定向到一个新的地方
+生成一个静态库：
+    gcc -c 生成.o文件
+    ar -rc 文件.a 文件.o
+    gcc 文件 -o 文件 -l库 -L路径
+

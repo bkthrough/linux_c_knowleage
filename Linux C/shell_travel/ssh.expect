@@ -1,0 +1,9 @@
+#!/usr/bin/expect
+set user "root"
+set ip   192.168.3.78
+set pass "westos"
+spawn ssh $user@$ip
+expect {
+    -re "yes/no"   {exp_send "yes\r"   ; exp_continue}
+    -re "assword"  {exp_send "$pass\r" ; exp_continue}
+}

@@ -1,0 +1,8 @@
+1.预编译:
+-E hello.c -o hello.i
+2.编译阶段:
+gcc -S hello.i -o hello.s
+3.汇编阶段:
+gcc -c hello.s -o hello.o
+4.链接阶段:
+gcc hello.o -o hello

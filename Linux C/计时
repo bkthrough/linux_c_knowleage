@@ -1,0 +1,8 @@
+#include <time.h>
+
+clock_t start,finish;
+double result = 0.0;
+start = clock();
+程序  
+finish = clock();
+result = (double)(finish - start)/CLOCK_PER_SEC;

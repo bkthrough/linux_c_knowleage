@@ -1,0 +1,154 @@
+我说：
+隐藏就是父类和子类有名字相同的函数，但是函数如果用子类创建对象，那么父类的函数就会被隐藏掉，导致即使参数不一样，在调用的时候也不会调用出父类的函数，反而会报错
+
+
+
+
+
+
+成员函数的重载、覆盖与隐藏
+成员函数的重载、覆盖(override)与隐藏很容易混淆,C++程序员必须要搞清楚
+概念,否则错误将防不胜防。
+8.2.1 重载与覆盖
+成员函数被重载的特征:
+(1)相同的范围(在同一个类中)
+;
+(2)函数名字相同;
+(3)参数不同;
+(4)virtual 关键字可有可无。
+覆盖是指派生类函数覆盖基类函数,特征是:
+(1)不同的范围(分别位于派生类与基类)
+;
+(2)函数名字相同;
+(3)参数相同;
+(4)基类函数必须有 virtual 关键字。
+示例 8-2-1 中,函数 Base::f(int)与 Base::f(float)相互重载,而 Base::g(void)
+被 Derived::g(void)覆盖。
+#include <iostream.h>
+class Base
+{
+public:
+void f(int x){ cout << "Base::f(int) " << x << endl; }
+void f(float x){ cout << "Base::f(float) " << x << endl; }
+virtual void g(void){ cout << "Base::g(void)" << endl;}
+};
+class Derived : public Base
+{
+public:
+virtual void g(void){ cout << "Derived::g(void)" << endl;}
+};
+void main(void)
+{
+Derived
+d;
+Base *pb = &d;
+pb->f(42);
+2001
+// Base::f(int) 42
+Page 60 of 101
+高质量 C++/C 编程指南,v 1.0
+pb->f(3.14f); // Base::f(float) 3.14
+pb->g(); // Derived::g(void)
+}
+示例 8-2-1 成员函数的重载和覆盖
+8.2.2 令人迷惑的隐藏规则
+本来仅仅区别重载与覆盖并不算困难,
+但是 C++的隐藏规则使问题复杂性陡然增加。
+这里“隐藏”是指派生类的函数屏蔽了与其同名的基类函数,规则如下:
+(1)如果派生类的函数与基类的函数同名,但是参数不同。此时,不论有无 virtual
+关键字,基类的函数将被隐藏(注意别与重载混淆)
+。
+(2)
+如果派生类的函数与基类的函数同名,
+并且参数也相同,
+但是基类函数没有 virtual
+关键字。此时,基类的函数被隐藏(注意别与覆盖混淆)
+。
+示例程序 8-2-2(a)中:
+(1)函数 Derived::f(float)覆盖了 Base::f(float)。
+(2)函数 Derived::g(int)隐藏了 Base::g(float),而不是重载。
+(3)函数 Derived::h(float)隐藏了 Base::h(float),而不是覆盖。
+#include <iostream.h>
+class Base
+{
+public:
+virtual void f(float x){ cout << "Base::f(float) " << x << endl; }
+void g(float x){ cout << "Base::g(float) " << x << endl; }
+void h(float x){ cout << "Base::h(float) " << x << endl; }
+};
+class Derived : public Base
+{
+public:
+virtual void f(float x){ cout << "Derived::f(float) " << x << endl; }
+void g(int x){ cout << "Derived::g(int) " << x << endl; }
+void h(float x){ cout << "Derived::h(float) " << x << endl; }
+};
+示例 8-2-2(a)成员函数的重载、覆盖和隐藏
+据作者考察,很多 C++程序员没有意识到有“隐藏”这回事。由于认识不够深刻,
+“隐藏”的发生可谓神出鬼没,常常产生令人迷惑的结果。
+示例 8-2-2(b)中,bp 和 dp 指向同一地址,按理说运行结果应该是相同的,可事
+实并非这样。
+2001
+Page 61 of 101
+高质量 C++/C 编程指南,v 1.0
+void main(void)
+{
+Derived
+d;
+Base *pb = &d;
+Derived *pd = &d;
+// Good : behavior depends solely on type of the object
+pb->f(3.14f); // Derived::f(float) 3.14
+pd->f(3.14f); // Derived::f(float) 3.14
+// Bad : behavior depends on type of the pointer
+pb->g(3.14f); // Base::g(float) 3.14
+pd->g(3.14f); // Derived::g(int) 3
+(surprise!)
+// Bad : behavior depends on type of the pointer
+pb->h(3.14f); // Base::h(float) 3.14
+pd->h(3.14f); 
+(surprise!)
+// Derived::h(float) 3.14
+}
+示例 8-2-2(b) 重载、覆盖和隐藏的比较
+8.2.3 摆脱隐藏
+隐藏规则引起了不少麻烦。示例 8-2-3 程序中,语句 pd->f(10)的本意是想调用函
+数 Base::f(int),但是 Base::f(int)不幸被 Derived::f(char *)隐藏了。由于数字 10
+不能被隐式地转化为字符串,所以在编译时出错。
+class Base
+{
+public:
+void f(int x);
+};
+class Derived : public Base
+{
+public:
+void f(char *str);
+};
+void Test(void)
+{
+Derived *pd = new Derived;
+pd->f(10);
+// error
+}
+示例 8-2-3 由于隐藏而导致错误
+2001
+Page 62 of 101
+高质量 C++/C 编程指南,v 1.0
+从示例 8-2-3 看来,隐藏规则似乎很愚蠢。但是隐藏规则至少有两个存在的理由:
+写语句 pd->f(10)的人可能真的想调用 Derived::f(char *)函数,只是他误将参数
+写错了。有了隐藏规则,编译器就可以明确指出错误,这未必不是好事。否则,编
+译器会静悄悄地将错就错,程序员将很难发现这个错误,流下祸根。
+假如类 Derived 有多个基类(多重继承)
+,有时搞不清楚哪些基类定义了函数 f。如
+果没有隐藏规则,那么 pd->f(10)可能会调用一个出乎意料的基类函数 f。尽管隐
+藏规则看起来不怎么有道理,但它的确能消灭这些意外。
+示 例 8-2-3 中 , 如 果 语 句 pd->f(10)一 定 要 调 用 函 数 Base::f(int), 那 么 将 类
+Derived 修改为如下即可。
+class Derived : public Base
+{
+public:
+void f(char *str);
+void f(int x) { Base::f(x); }
+};
+

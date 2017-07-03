@@ -1,0 +1,154 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define TRUE     (1)
+#define FALSE    (0)
+#define IDEN_LEN (18)
+
+#define YEAR_LEN  (5)
+#define MON_LEN   (3)
+#define DAY_LEN   (3)
+
+#define Y_BEGIN  (1900)
+#define Y_END    (2015)
+#define M_BEGIN  (1)
+#define M_END    (12)
+#define D_BEGIN  (1)
+#define D_END    (31)
+
+#define RUN      (1)
+#define PIN      (0)
+
+//每年每月的天数,ymd[0]平年，ymd[1]闰年
+int ymd[2][13] = {{1, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
+                  {1, 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}};
+                   
+typedef unsigned char Boolean;
+
+Boolean get_birthday(const char *src_str, char *re_str);
+static Boolean judge_input_legal(const char *src_str);
+static Boolean judge_year_month_day(const char *src_str);
+static Boolean judge_run_year(const int year);
+
+
+static Boolean judge_run_year(const int year)
+{
+    int year_value = year;
+
+    if(year_value % 4 == 0 && year_value % 100 != 0
+    || year_value % 400 == 0){
+        return TRUE;
+    }else{
+        return FALSE;
+    }
+}
+
+static Boolean judge_year_month_day(const char *src_str)
+{
+    //年月日的字符数组以及对应的整型值
+    char year[YEAR_LEN] = {0};
+    char month[MON_LEN] = {0};
+    char day[DAY_LEN] = {0};
+    int  year_value = 0;
+    int  month_value = 0;
+    int  day_value = 0;
+   
+    Boolean is_run = FALSE;    
+
+    // 61040419920229351X
+
+    //取得年月日信息
+    strncpy(year, src_str + 6, 4);
+    strncpy(month, src_str + 10, 2);
+    strncpy(day, src_str + 12, 2);
+
+    year_value = atoi(year);
+    month_value = atoi(month);
+    day_value = atoi(day);
+
+    //判断年月日是否超过上下限
+    if(year_value < Y_BEGIN || year_value > Y_END
+    || month_value < M_BEGIN || month_value > M_END
+    || day_value < D_BEGIN || day_value > D_END){
+        return FALSE;
+    }
+     
+    //判断是否是闰年
+    if((is_run = judge_run_year(year_value)) == TRUE){
+       if(day_value < 0 || day_value > ymd[RUN][month_value]){
+           return FALSE;
+       }
+    }else{
+       if(day_value < 0 || day_value > ymd[PIN][month_value]){
+           return FALSE;
+       }
+    }
+
+    return TRUE;
+}
+
+static Boolean judge_input_legal(const char *src_str)
+{
+    int i = 0;
+    Boolean ymd_ok = FALSE;   
+
+    while(src_str[i] != '\0' && i < IDEN_LEN - 1){
+        if(!isdigit(src_str[i])){
+            return FALSE;
+        }
+        i++;
+    }
+    //判断最后一位
+    if(!(isdigit(src_str[i]) || src_str[i] == 'X')){
+        return FALSE;
+    }
+
+    ymd_ok = judge_year_month_day(src_str);
+
+    return ymd_ok;
+}
+
+Boolean get_birthday(const char *src_str, char *re_str)
+{
+    int src_len = 0;   
+    Boolean ok = FALSE;
+
+    //判断字符串的合法性
+    if(src_str == NULL || re_str == NULL){
+        return FALSE;
+    }
+
+    //判断输入字符串的格式是否符合身份证要求
+    src_len = strlen(src_str);
+   
+    if(src_len != IDEN_LEN){   //判断长度
+        return FALSE;
+    }
+
+    //判断身份证是否合法，合法取出年月日信息
+    ok = judge_input_legal(src_str);
+    if(ok == TRUE){  
+        strncpy(re_str, src_str + 6, 8);
+        re_str[8] = '\0';
+        return TRUE;
+    }
+
+    return FALSE;
+}
+
+int main(int argc, char **argv)
+{
+    char str[20] = "61040419920230351X";
+    char re_str[20]  = {0};
+    Boolean ok = FALSE;
+
+    ok = get_birthday(str, re_str);
+
+    if(ok == TRUE){
+        printf("the birthday is:%s\n", re_str);
+    }else{
+        printf("the identity card is error!\n");
+    }
+    return 0;
+}

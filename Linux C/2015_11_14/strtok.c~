@@ -1,0 +1,49 @@
+#include <stdio.h>
+#include <stdlib.h>
+char *my_strtok(char *str,const char *delim);
+char *my_strtok(char *str,const char *delim)
+{
+    char *str_get = malloc(sizeof(char)*100);
+    char *str_fan = str_get;
+    static char *str_jilu;
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    if(str != NULL)
+        str_jilu = str;
+    //静态变量存储str
+    if(delim == NULL||*str_jilu == '\0')
+	    return NULL;
+    for(i = 0;delim[i];i++);
+    //如果匹配到所给字符，就直接返回
+    for(;;){
+        if(*str_jilu == '\0'){
+            return str_fan;
+        }
+        for(k = 0;k < i;k++){
+            if(*str_jilu == delim[k])
+                break;
+        }
+        if(*str_jilu == delim[k])
+            break;
+        else{
+            *str_get = *str_jilu;
+            str_get++;
+            str_jilu++;
+        }
+    }
+    str_jilu++;
+    return str_fan;
+}
+int main(int argc,char *argv[])
+{
+    char *str = "hello,w(orl)d,1(!)1";
+    char *delim = ",()";
+    char *p;
+    int i;
+    printf("%s\n",my_strtok(str,delim));
+    while((p = my_strtok(NULL,delim)) != NULL){
+        printf("%s\n",p);
+    }
+    return 0;
+}

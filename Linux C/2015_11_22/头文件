@@ -1,0 +1,12 @@
+1.在头文件中，加入
+#ifndef _xxx_H
+#define _xxx_h
+
+
+#endif
+
+目的是为了在调用头文件的时候，防止重复定义
+如#include "xxx.h"
+#include "xxx.h"
+加入之后就不用管下面的了
+

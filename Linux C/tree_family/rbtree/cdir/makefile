@@ -1,0 +1,4 @@
+# makefile
+
+ALL :
+	$(CC) -o ()

@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+//网络传输字符串的时候可能会在每一个单词后面加一些东西
+//有空格就转换为%20
+//最好的方法就是从后向前遍历
+//比如hello world
+//输出为hello%20world
+char *transform_blank(char *string,int length);
+char *transform_blank(char *string,int length)
+{
+    int i = 0;
+    int j = 0;
+    int k = 0;
+    int m;
+    if(string == NULL||length < 0)
+        exit(1);
+    while(string[i] != '\0'){
+        k++;
+        i++;
+    }
+    i = 0;
+    while(string[i] != '\0'){
+        if(string[i] == ' '){
+            for(m = k;m > i ;m--){
+                string[m+2] = string[m];
+            }
+            k += 2;
+            string[i++] = '%';
+            string[i++] = '2';
+            string[i++] = '0';
+        }
+        else
+            i++;
+    }
+}
+int main(int argc,char *argv[])
+{
+    char string[100] = "h el lo";
+    transform_blank(string,100);
+    printf("%s\n",string);
+    return 0;
+}

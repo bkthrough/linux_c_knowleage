@@ -1,0 +1,35 @@
+awk -F "间隔条件" '{print $第几个}'
+可以在{}中加循环，加语句都可以
+如
+awk -F "/" '{for(i=1;i<NF;i++) printf "$i";}'
+NF表示间隔后元素个数，注意printf要加;
+
+awk脚本：
+BEGIN{
+    条件
+}
+{
+    内容
+}
+END{
+}
+
+如：
+
+BEGIN{
+    FS="/"
+    WHO="hzywolf"
+}
+{
+    for(i=NF;i>0;--i){
+        if($i ~ /:/)
+            break
+    }
+    if($1 ~ /hzywolf/){
+        printf("%s",WHO);
+        for(i+=1;i<=NF;++i){
+            printf("/%s",$i);
+        }
+        printf("\n");
+    }
+}

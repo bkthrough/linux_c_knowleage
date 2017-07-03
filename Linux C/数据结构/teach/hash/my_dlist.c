@@ -1,0 +1,306 @@
+#include "mydlist.h"
+#include "tools.h"
+
+static Dlist_node create_node(void);
+Boolean remove_dlist_node(Dlist dlist,Dlist_node node)
+{
+    Dlist_node tmp = NULL;
+    if(dlist == NULL || node == NULL){
+        return FALSE;
+    }
+    tmp = node->prev;
+    tmp->next = node->next;
+    if(dlist->free_node){
+        dlist->free_node(node->data);
+    }
+    free(node);
+    return TRUE;
+}
+Boolean insert_next(Dlist dlist,Dlist_node node,void *value)
+{
+    Dlist_node p = NULL;
+    if(dlist == NULL || node == NULL || value == NULL){
+        return FALSE;
+    }
+    p = create_node();
+    p->data = value;
+    p->next = node->next;
+    if(p->next == NULL){
+        dlist->tail = p;
+    }
+    else{
+        node->next->prev = p;
+    }
+    node->next = p;
+    dlist->count++;
+    return TRUE;
+}
+Boolean insert_prev(Dlist dlist,Dlist_node node,void *value)
+{
+    Dlist_node p = NULL;
+    if(dlist == NULL || node == NULL || value == NULL){
+        return FALSE;
+    }
+    p = create_node();
+    p->data = value;
+    p->next = node;
+    p->prev = node->prev;
+    if(node->prev == NULL){
+        dlist->head = p;
+    }
+    else{
+        node->prev->next = p;
+    }
+    node->prev = p;
+    dlist->count++;
+    return TRUE;
+}
+Boolean get_front(Dlist dlist,void **value)
+{
+    if(dlist == NULL || dlist->count == ZERO){
+        return FALSE;
+    }
+    if(value){
+        *value = dlist->head->data;
+    }
+    return TRUE;
+}
+Boolean get_back(Dlist dlist,void **value)
+{
+    if(dlist == NULL || dlist->count == ZERO){
+        return FALSE;
+    }
+    if(value){
+        *value = dlist->tail->data;
+    }
+    return TRUE;
+}
+static Dlist_node create_node(void)
+{
+    Dlist_node node = NULL;
+    node = (Dlist_node)Malloc(sizeof(struct Dlist_node));
+    bzero(node,sizeof(struct Dlist_node));
+    return node;
+}
+void show_dlist(Dlist dlist,Print_func print)
+{
+    Dlist_node p = NULL;
+    if(dlist && dlist->count > 0){
+        p = dlist->head;
+        while(p){
+            print(p->data);
+            p = p->next;
+        }
+        printf("\n");
+    }
+}
+//初始化
+Dlist init_dlist(void)
+{
+    Dlist dlist;
+    dlist = (Dlist)Malloc(sizeof(struct Dlist));
+    //dlist->head = dlist->tail = NULL;
+    //dlist->count = 0;
+    //dlist->free = NULL;
+    //dlist->match = NULL;
+    //dlist->copy_node = NULL;
+    bzero(dlist,sizeof(struct Dlist));
+    return dlist;
+}
+//尾部弹出
+Boolean pop_back(Dlist dlist)
+{
+    if(dlist == NULL || dlist->count ==ZERO){
+        return FALSE;
+    }
+    Dlist_node p = dlist->tail;
+    if(dlist->count == ONE){
+        dlist->head = dlist->tail = NULL;
+    }
+    else{
+        dlist->tail = dlist->tail->prev;
+        dlist->tail->next = NULL;
+    }
+    if(dlist->free_node){
+        dlist->free_node(p->data);
+    }
+    free(p);
+    dlist->count--;
+    return TRUE;
+}
+//头部弹出
+Boolean pop_front(Dlist dlist)
+{
+    if(dlist == NULL || dlist->count == ZERO){
+        return FALSE;
+    }
+    Dlist_node p = dlist->head;
+    if(dlist->count == ONE){
+        dlist->head = dlist->tail = NULL;
+    }
+    else{
+        dlist->head = dlist->head->next;
+        dlist->head->prev = NULL;
+    }
+    if(dlist->free_node){
+        dlist->free_node(p->data);
+    }
+    free(p);
+    dlist->count--;
+    return TRUE;
+}
+//头插
+Boolean push_front(Dlist dlist,void *value)
+{
+    Dlist_node node = NULL;
+    if(value == NULL){
+        return FALSE;
+    }
+    node = create_node();
+    node->data = value;
+    if(dlist->count == ZERO){
+        dlist->tail = dlist->head = node;
+    }
+    else{
+        node->next = dlist->head;
+        dlist->head->prev = node;
+        dlist->head = node;
+    }
+    dlist->count++;
+    return TRUE;
+}
+//尾插
+Boolean push_back(Dlist dlist,void *value)
+{
+    Dlist_node node = NULL;
+    if(value == NULL){
+        return FALSE;
+    }
+    node = create_node();
+    node->data = value;
+    if(dlist->count == ZERO){
+        dlist->tail = dlist->head = node;
+    }
+    else{
+        dlist->tail->next = node;
+        node->prev = dlist->tail;
+        dlist->tail = node;
+    }
+    dlist->count++;
+    return TRUE;
+}
+//销毁链表
+void destroy_dlist(Dlist *dlist)
+{
+    if(*dlist == NULL){
+        return ;
+    }
+    Dlist_node p = (*dlist)->head;
+    while((*dlist)->head){
+        (*dlist)->head = p->next;
+        if((*dlist)->free_node)
+            (*dlist)->free_node(p->data);
+        free(p);
+        p = (*dlist)->head;
+    }
+    free(*dlist);
+    *dlist = NULL;
+    printf("已销毁\n");
+}
+#if 0
+Boolean insert_prev(Dlist dlist,Dlist_node node,void *value)
+{
+    if(dlist == NULL || node == NULL || value == NULL){
+        return FALSE;
+    }
+    if(dlist->count == ONE){
+        push_front(dlist,value);
+    }
+    Dlist_node p = (Dlist_node)Malloc(sizeof(struct Dlist_node));
+    Dlist_node m = node->prev;
+    p->data = value;
+    m->next = p;
+    p->prev = m;
+    p->next = node;
+    node->prev = p;
+}
+Boolean insert_next(Dlist dlist,Dlist_node node,void *value)
+{
+    if(dlist == NULL || node == NULL || value == NULL){
+        return FALSE;
+    }
+    if(dlist->count == ONE){
+        push_back(dlist,value);
+    }
+    Dlist_node p = (Dlist_node)Malloc(sizeof(struct Dlist_node));
+    Dlist_node m = node->next;
+    p->data = value;
+    node->next = p;
+    p->prev = node;
+    p->next = m;
+    m->prev = p;
+    return TRUE;
+}
+#endif
+//void free_list(void *value)
+//{
+//    while(value->count){
+//        pop_back(value);
+//    }
+//}
+//void free_tree(void *value)
+//{
+//    while(value){
+//        free_tree(value->left);
+//        free_tree(value->right);
+//        free(value);
+//    }
+//}
+#if 0
+void free_graph(void *value)
+{
+    while(value){
+        
+    }
+}
+#endif
+//void choose_free(unsigned char choose,void **value)
+//{
+//    if(value == NULL || *value == NULL){
+//        return ;
+//    }
+//    if(choose == "list"){
+//        free_list(*value);
+//    }
+//    else if(choose == "tree"){
+//        free_tree(*value);
+//    }
+//    free(*value);
+//    *value = NULL;
+//}
+//Boolean remove_dlist_node(unsigned char choose,Dlist dlist,Dlist_node node,void **value)
+//{
+//    if(dlist == NULL || node ==NULL){
+//        return FALSE;
+//    }
+//    Dlist_node p = node->prev;
+//    Dlist_node q = node->next;
+//    p->next = q;
+//    q->prev = p;
+//    choose_free(choose,value);
+//    free(node);
+//    return TRUE;
+//}
+//#endif
+//int main(int argc,char *argv[])
+//{
+//    int i;
+//    int a = 4;
+//    int *p = &(a);
+//    Dlist dlist;
+//    dlist = init_dlist();
+//    for(i = 0;i < 10; ++i){
+//        push_front(dlist,(int *)(unsigned long)(rand() % 10));
+//    }
+//    return 0;
+//}

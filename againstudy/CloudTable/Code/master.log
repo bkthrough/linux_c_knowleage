@@ -1,0 +1,55 @@
+[8112] 24 Jun 22:45:54 - The CloudTable Version is 0.1.
+[8112] 24 Jun 22:45:54 - The 0.1 Version only allows adding one region node.
+[8112] 24 Jun 22:45:54 - Loading the master info from conf path is conf/master.conf.
+[8112] 24 Jun 22:45:54 - The daemon for master side flushing has started.
+[8112] 24 Jun 22:45:54 - The Master server is starting at 8301 and will handle request.
+[8112] 24 Jun 22:45:54 - The Master Conf File is at conf/master.conf.
+[8112] 24 Jun 22:45:54 - The Master Duplication Number is 1.
+[8112] 24 Jun 22:45:54 - The Master Flushing Checking Interval is 600.
+[8112] 24 Jun 22:45:54 - Starting the daemon and Accepting connection...
+[10043] 25 Jun 09:10:57 - The CloudTable Version is 0.1.
+[10043] 25 Jun 09:10:57 - The 0.1 Version only allows adding one region node.
+[10043] 25 Jun 09:10:57 - Loading the master info from conf path is conf/master.conf.
+[10043] 25 Jun 09:10:57 - The daemon for master side flushing has started.
+[10043] 25 Jun 09:10:57 - The Master server is starting at 8301 and will handle request.
+[10043] 25 Jun 09:10:57 - The Master Conf File is at conf/master.conf.
+[10043] 25 Jun 09:10:57 - The Master Duplication Number is 1.
+[10043] 25 Jun 09:10:57 - The Master Flushing Checking Interval is 600.
+[10043] 25 Jun 09:10:57 - Starting the daemon and Accepting connection...
+[10043] 25 Jun 09:12:46 - Adding a new Region 127.0.0.1:8302.
+[10043] 25 Jun 09:13:06 * The client is attempting adding one more region node.
+[10043] 25 Jun 09:14:20 - Create a new Table student.
+[10043] 25 Jun 09:14:20 - Creating the replica queue 0 for table student.
+[10043] 25 Jun 09:20:57 - The interval is up, checking region status now.
+[10043] 25 Jun 09:20:57 - Finish the checking.
+[16189] 25 Jun 23:11:52 - The CloudTable Version is 0.1.
+[16189] 25 Jun 23:11:52 - The 0.1 Version only allows adding one region node.
+[16189] 25 Jun 23:11:52 - Loading the master info from conf path is conf/master.conf.
+[16189] 25 Jun 23:11:52 * Failed to connect to server 127.0.0.1:8302.
+[16189] 25 Jun 23:11:52 * The target region 127.0.0.1:8302 have some problem:connection Failed.
+[16189] 25 Jun 23:11:52 * This routine has not been tested, and stops now.
+[16189] 25 Jun 23:11:52 - The daemon for master side flushing has started.
+[16189] 25 Jun 23:11:52 - The Master server is starting at 8301 and will handle request.
+[16189] 25 Jun 23:11:52 - The Master Conf File is at conf/master.conf.
+[16189] 25 Jun 23:11:52 - The Master Duplication Number is 1.
+[16189] 25 Jun 23:11:52 - The Master Flushing Checking Interval is 600.
+[16189] 25 Jun 23:11:52 - Starting the daemon and Accepting connection...
+[16189] 25 Jun 23:12:37 * The client is attempting adding one more region node.
+[16189] 25 Jun 23:12:46 - Create a new Table people.
+[16189] 25 Jun 23:12:46 - Creating the replica queue 0 for table people.
+[16189] 25 Jun 23:12:46 * Can not find good region node for table people.
+[17121] 25 Jun 23:46:59 - The CloudTable Version is 0.1.
+[17121] 25 Jun 23:46:59 - The 0.1 Version only allows adding one region node.
+[17121] 25 Jun 23:46:59 - Loading the master info from conf path is conf/master.conf.
+[17121] 25 Jun 23:46:59 * Failed to connect to server 127.0.0.1:8302.
+[17121] 25 Jun 23:46:59 * The target region 127.0.0.1:8302 have some problem:connection Failed.
+[17121] 25 Jun 23:46:59 * This routine has not been tested, and stops now.
+[17121] 25 Jun 23:46:59 - The daemon for master side flushing has started.
+[17121] 25 Jun 23:46:59 - The Master server is starting at 8301 and will handle request.
+[17121] 25 Jun 23:46:59 - The Master Conf File is at conf/master.conf.
+[17121] 25 Jun 23:46:59 - The Master Duplication Number is 1.
+[17121] 25 Jun 23:46:59 - The Master Flushing Checking Interval is 600.
+[17121] 25 Jun 23:46:59 - Starting the daemon and Accepting connection...
+[17121] 25 Jun 23:56:59 - The interval is up, checking region status now.
+[17121] 25 Jun 23:56:59 - Finish the checking.
+[17121] 26 Jun 00:06:59 - The interval is up, checking region status now.

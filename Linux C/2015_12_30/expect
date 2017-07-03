@@ -1,0 +1,13 @@
+自动链接ssh的脚本
+#!/usr/bin/expect
+
+set usr "root"
+set pass "westos"
+set ip 192.168.3.123
+
+spawn ssh $user@$ip
+
+expect{
+    -re "yes/no"  { exp_send "yes\r"   ; exp_continue }
+    -re "assword" { exp_send "$pass\r" ; exp_continue }
+}

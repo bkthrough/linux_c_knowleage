@@ -1,0 +1,11 @@
+# makefile
+
+
+ROOTPATH          =    $(shell pwd)
+SRC               =    $(ROOTPATH)/src
+HEAD              =    $(ROOTPATH)/head
+
+
+linux : test_make.c
+	$(CC) -o linux test_make.c -I$(HEAD)
+	@date

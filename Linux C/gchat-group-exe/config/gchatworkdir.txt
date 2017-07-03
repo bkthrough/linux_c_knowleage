@@ -1,0 +1,2 @@
+# The running work directory
+/Server/GTK+_Develop/develop/gchat-group-v06

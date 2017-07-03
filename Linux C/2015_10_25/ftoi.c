@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <string.h>
+//float转换为int型.
+#define POSITIVE     (1)
+#define NEGATIVE     (-1)
+#define MANTI_LEN    (23)
+#define FLOAT_ZERO   (127)
+
+#define get_float_flag(v)    ((((v) >> 31) & 1) == 0 ? POSITIVE : NEGATIVE)
+#define get_float_index(v)   ((((v) >> MANTI_LEN) & 0xFF) - FLOAT_ZERO)
+#define get_float_mantissa(v)   (((v) & 0x7FFFFF) | (1 << MANTI_LEN)) 
+
+    //   01000001 01000100 00000000 00000000
+    //
+    //
+    //   00000000 11000100 00000000 00000000
+int ftoi(const float value);
+
+int ftoi(const float value)
+{
+    //   12.25
+    //
+    //   1100.01
+    //
+    //   1.10001 * 2 ^ 3
+    //
+    //   float类型：
+    //
+    //   符号位   1
+    //   指数位   8
+    //   尾数     23
+    //   
+    //   01000001 01000100 00000000 00000000
+    //
+    int temp = 0    ;
+    int flag = 0    ;     //符号值
+    int index = 0   ;    //指数值
+    int mantissa = 0;    //尾数值
+ 
+    //获取float类型中的0和1
+    memcpy(&temp, &value, sizeof(float)); 
+  
+    //获得符号位
+    flag = get_float_flag(temp);   // 1
+    //获得指数内容
+    index = get_float_index(temp);    // 3
+    //获得尾数内容
+    mantissa = get_float_mantissa(temp);
+ //   00000000 11000100 00000000 00000000
+    if(index < 0){    //没有整数部分
+        return 0;
+    }
+   
+    mantissa >>= (MANTI_LEN - index);
+    
+    return mantissa * flag;
+
+}
+
+int main(int argc, char **argv)
+{
+    float value = 4.0;
+    int result = 0;
+
+    result = ftoi(value);
+
+    printf("the int is:%d\n", result);
+
+    return 0;
+}

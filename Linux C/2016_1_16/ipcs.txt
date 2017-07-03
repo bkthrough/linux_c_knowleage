@@ -1,0 +1,43 @@
+#一、pipe 管道
+
+#无名管道只能用于具有亲缘关系的进程之间通信。
+#int pipe(int pipefd[2]);
+pipefd[0]  ==>  read
+pipefd[1]  ==>  write
+#管道是一个处于内存的特殊文件，只能被读一次。
+#管道的创建在父进程中，子进程继承的是管道的>
+#>文件描述符及其属性结构，并未复制管道所占的内存。
+#无名管道，私有，依附于进程存在。
+#管道的默认大小为4096KB
+#gdb attach PID查看当前进程的栈帧，退出的时候detach。
+#open和mkfifo的区别：open创建的是ASCII文件，mkfifo创建的是有名管道文件。
+#解决网络传输问题“设置标志的思想”。
+
+#二、共享内存
+#共享内存对于整个系统有效
+#共享内存，有一个唯一的key和唯一的ID。
+#共享内存的生命独立于进程存在。
+#创建共享内存的函数(也可用来获取该内存的ID号)
+#int shmget(key_t key, size_t size, int shmflg);
+#共享内存可以被其他进程所使用。而且内容可以改变。
+
+
+#将ID 号转换为地址值：
+void *shmat(int shmid, const void *shmaddr, int shmflg);
+#删除共享内存的链接
+int shmdt(const void *shmaddr);
+#删除共享内存
+#1、删除共享内存的命令
+ipcrm -m <shmid>
+ipcrm -M <shmkey>
+#2、删除共享内存的函数
+#共享内存的应用：
+     比如由于进程终止，数据还保存在共享内存，如reload，debug操作等
+     
+     
+
+
+
+
+
+

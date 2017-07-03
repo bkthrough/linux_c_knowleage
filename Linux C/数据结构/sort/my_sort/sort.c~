@@ -1,0 +1,404 @@
+#include "sort.h"
+#include <strings.h>
+
+#define SIZE  (100)
+
+static void merge_array(int *a,int left,int mid,int right,int *temp);
+static void Merge_sort(int *a,int left,int right,int *temp);
+static int get_max(int *a,int length);
+void count_sort1(int *a,int length,int min,int max);
+void quick_sort1(int *a,int length);
+static int Quick_sort1(int *a,int left,int right);
+static void Quick_sort(int *a,int left,int right);
+void shell_sort(int *a,int length)
+{
+    int inc;
+    int i;
+    int j;
+    int temp;
+
+    for(inc = 7; inc > 0; inc /= 2){
+        for(i = inc;i < length; ++i){
+            temp = a[i];
+            for(j = i-inc; j >= 0 && a[j] > temp; j -= inc){
+                a[j+inc] = a[j];
+            }
+            a[j+inc] = temp;
+        //for(j = i-1; j >= 0 && tmp < a[j]; --j){
+        //     //移位直到找到该存放变量的位置
+        //     a[j+1] = a[j];
+        //}
+        ////把改变量存放进去
+        //a[j+1] = tmp;
+        }
+    }
+}
+void quick_sort1(int *a,int length)
+{
+    int left = 0;
+    int right = length-1;
+
+    Quick_sort(a,left,right);
+}
+static void Quick_sort(int *a,int left,int right)
+{
+    int m ;
+
+    if(left < right){
+        m = Quick_sort1(a,left,right);
+        Quick_sort(a,left,m-1);
+        Quick_sort(a,m+1,right);
+    }
+}
+static int Quick_sort1(int *a,int left,int right)
+{
+    int value = a[right];
+    int i = left - 1;
+    int j = left;
+    int temp = 0;
+
+    for(j; j <= right; ++j){
+        if(a[j] <= value){
+            i++;
+            temp = a[i];
+            a[i] = a[j];
+            a[j] = temp;
+        }
+    }
+    return i;
+}
+//计数排序，把数组b的[下标-min]当作a的值，每次遇到相同的a的值b的[下标-min]就+1
+//j = 0,i = 0.从开始遍历数组b，a[i++] = j+min,直到b[j]存的值为0.就让j+1.
+//直到j == max - min
+void count_sort1(int *a,int length,int min,int max)
+{
+    int i;
+    int j;
+    int size = max - min + 1;
+    int *b = (int *)Malloc((size) * sizeof(int));
+
+    bzero(b,sizeof(int) * size);
+    if(a == NULL || max < min){
+        return ;
+    }
+    for(i = 0; i < length; ++i){
+        b[a[i] - min]++;
+    }
+    for(i = 0,j = 0; j < length;){
+        if(b[i]){
+            a[j++] = i + min;
+            b[i]--;
+        }
+        else{
+            i++;
+        }
+    }
+    free(b);
+}
+//快排：
+//分治方法：
+//i从最左边开始，j从最右边开始
+//先另a[left]为枢纽元素并记录下来，j从后向前找如果不超过i
+//把找到的这个元素a[j]赋值给a[i],当i < j就让i从前向后找
+//赋给a[j]，最后当i和j相等时就退出并且把枢纽元素赋值给a[i]
+//这时pivot位置肯定就是不会变了，然后对枢纽元左边和右边的进行快排。
+void quick_sort(int *a,int left,int right)
+{
+    int i = left;
+    int j = right;
+    int pivot = a[i];
+
+    if(left > right){
+        return ;
+    }
+    // 6 8 4 2 6 7
+    // 6 8 4 2 6 7
+    while(i < j){
+        while(i < j && a[j] >= pivot){
+            j--;
+        }
+        if(i < j){
+            a[i++] = a[j];
+        }
+        while(i < j && a[i] <= pivot){
+            i++;
+        }
+        if(i < j){
+            a[j--] = a[i];
+        }
+    }
+    a[i] = pivot;
+
+    quick_sort(a,left,i-1);
+    quick_sort(a,i+1,right);
+}
+#if 1
+static int get_num_in_bit(int value,int bit)
+{
+    int num = 1;
+
+    while(bit-- > 1){
+        num *= 10;
+    }
+
+    return (value / num) % 10;
+}
+//找到最大值
+static int get_max(int *a,int length)
+{
+    int max = a[0];
+    int i = 0;
+
+    for(i = 0; i < length; ++i){
+        if(max < a[i]){
+            max = a[i];
+        }
+    }
+    return max;
+}
+//找到最大值有几位
+static int get_bit_size(int value)
+{
+    int bit = 0;
+
+    while(value){
+        bit++;
+        value /= 10;
+    }
+    return value;
+}
+//基数排序，以个位开始排序，然后再以十位排序。直到最大的值的位数
+//个位排序好的存放在一个指针数组中，都存放好了，再赋值给原数组a
+//依次循环
+void base_sort1(int *a,int length)
+{
+    int *bucket[SIZE];
+    int j;
+    int i = 0;
+    int max_value;
+    int max_bit;
+    int bit;
+    int bit_num;
+    int count;
+    int k;
+    int index;
+
+    for(i = 0; i < SIZE; ++i){
+        bucket[i] = (int *)Malloc(sizeof(int) * SIZE+1);
+        bucket[i][0] = 0;
+    }
+    max_value = get_max(a,SIZE);
+    max_bit = get_bit_size(max_value);
+
+    for(bit = 1; bit <= max_bit; ++bit){
+        for(i = 0; i < length; ++i){
+            bit_num = get_num_in_bit(a[i],bit);
+            bucket[bit_num][0]++;
+            index = bucket[bit_num][0];
+            bucket[bit_num][index] = a[i];
+        }
+
+        for(i = 0, j = 0; i < SIZE; ++i){
+            count = bucket[i][0];
+            for(k = 1; k <= count; ++k){
+                a[j++] = bucket[i][k];
+            }
+            bucket[i][0] = 0;
+        }
+    }
+}
+#if 0
+void base_sort(int *a,int length)
+{
+    int *get_a = (int *)Malloc(sizeof(int) * length);
+    int i;
+    Hash hash;
+    int max_count = 0;
+    int max = a[0];
+    int *value = NULL;
+
+    hash = init_hash();
+    for(i = 1; i < length; ++i){
+        if(a[i] > max){
+            max = a[i];
+        }
+    }
+    while(max){
+        max /= 10;
+        max_count++;
+    }
+    for(i = 0; i < legnth; ++i){
+        get_a[i] = a[i];
+    }
+    while(max_count--){
+        for(i = 0;i < length; ++i){
+            hash_insert(hash,get_a[i] % 10);
+        }
+        for(i = 0;i < length; ++i){
+            while(hash->table[i]){
+                get_tail(hash->table[i],&value);
+                pop_back(hash->table[i]);
+                get_a[i] = *value;
+                get_a[i] /= 10;
+            }
+        }
+    }
+}
+#endif
+//选择排序，找到length-i个元素的最小值，然后替换第i个。
+void select_sort(int *a,int length)
+{
+    int i = 0;
+    int j = 0;
+    int min = 0;
+    int tmp;
+
+    if(a == NULL || length < 0){
+        return ;
+    }
+    for(i = 0; i < length-1; ++i){
+        min = i;
+        for(j = i+1; j < length; ++j){
+            if(a[min] > a[j]){
+                min = j;
+            }
+        }
+        tmp = a[i];
+        a[i] = a[min];
+        a[min] = tmp;
+    }
+}
+//冒泡排序，后面的比前面小则交换，把前length-i个元素最大值放在length-i-1处
+void bubble_sort(int *a,int length)
+{
+    int i;
+    int j;
+    int tmp;
+
+    if(NULL == a || length < 0){
+        return ;
+    }
+    for(i = 0; i < length-1; ++i){
+        for(j = 0; j < length-i-1; ++j){
+            if(a[j+1] < a[j]){
+                tmp = a[j+1];
+                a[j+1] = a[j];
+                a[j] = tmp;
+            }
+        }
+    }
+}
+//插入排序，把小元素插入到大元素的前面。
+void insert_sort(int *a,int length)
+{
+    int i;
+    int j;
+    int tmp;
+
+    if(a == NULL || length < 0){
+        return ;
+    }
+    for(i = 1; i < length; ++i){
+        //用一个变量存这个可能被覆盖的单元的值
+        tmp = a[i];
+        for(j = i-1; j >= 0 && tmp < a[j]; --j){
+             //移位直到找到该存放变量的位置
+             a[j+1] = a[j];
+        }
+        //把改变量存放进去
+        a[j+1] = tmp;
+    }
+}
+//归并排序
+void merge_sort(int *a,int length)
+{
+    int left = 0;
+    int right = length-1;
+    int *temp = (int *)Malloc(sizeof(int) * length);
+
+    if(a == NULL || length < 2){
+        return ;
+    }
+    Merge_sort(a,left,right,temp);
+}
+//数组递归分割成最小单元为1，然后调用merge_array函数进行两个单元的合并
+static void Merge_sort(int *a,int left,int right,int *temp)
+{
+    int mid = left + ((right - left) >> 1);
+    if(left < right){
+        Merge_sort(a,left,mid,temp);
+        Merge_sort(a,mid+1,right,temp);
+        merge_array(a,left,mid,right,temp);
+    }
+}
+static void merge_array(int *a,int left,int mid,int right,int *temp)
+{
+    int i = left;
+    int j = mid+1;
+    int l = left;
+    int r = right;
+    int m = mid;
+    int n = mid+1;
+    int k = 0;
+
+    //把两个数组合并到temp里
+    //把小的值放到前面，直到一个单元到头
+    while(i <= m && j <= r){
+        if(a[i] < a[j]){
+            temp[k++] = a[i++];
+        }
+        else{
+            temp[k++] = a[j++];
+        }
+    }
+    //对另一个没到头的单元的剩余元素直接都赋值给temp
+    while(i <= m){
+        temp[k++] = a[i++];
+    }
+    while(j <= r){
+        temp[k++] = a[j++];
+    }
+    //把temp的值都赋给a
+    for(i = 0; i < k; ++i){
+        a[i+left] = temp[i];
+    }
+}
+//计数排序,申请一个数组b和c，如果a[n] == a[m],那么就对b[a[n]]++.
+//如 a 4 3 3 2 2 1
+//b的下标对应a的值，b的下标存放的值是重复的次数
+// b下标：     0 1 2 3 4
+// b对应的值： 0 1 2 2 1
+//然后让b存储小于等于这个值的个数
+// b下标       0 1 2 3 4
+// b对应的值   0 1 3 5 6
+//让c存储有序的值
+// c[b[a[i]]-1] = a[i];
+// b[i]--;
+//最后把c赋值给a即可
+void count_sort(int *a,int length,int range)
+{
+    int k = 0;
+    int j = 0;
+    int i = 0;
+    int *b = (int *)Malloc(sizeof(range));
+    int *c = (int *)Malloc(sizeof(length));
+
+    if(a == NULL || length < 0){
+        return ;
+    }
+    b[6] = 0;
+    for(i = 0; i < length; ++i){
+        b[a[i]]++;
+    }
+    for(i = 1; i < range; ++i){
+        b[i] = b[i]+b[i-1];
+    }
+    for(i = length-1; i >= 0 ; --i){
+        c[b[a[i]]-1] = a[i];
+        b[a[i]] -= 1;
+    }
+    for(i = 0;i < length; ++i){
+        a[i] = c[i];
+    }
+}
+#endif

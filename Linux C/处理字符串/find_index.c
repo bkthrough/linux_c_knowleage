@@ -1,0 +1,31 @@
+#include <stdio.h>
+//字符在字符串的什么位置
+int find_index(char *string, int lable);
+int find_index(char *string, int lable)
+{
+    int index = 0;
+    char *str = string;
+    if(string == NULL){
+	return NULL;
+    }
+    while(*str != '\0'){
+	if((char)lable == *str){
+	    break;
+	}
+	str++;
+	index++;
+    }
+    return index;
+
+
+}
+
+
+int main(int argc, char **argv)
+{
+    char str1[] = "hello,everyone!";
+    char ch = 'e' ;
+
+    printf("%d\n",find_index(str1, (int)ch));
+    return 0;
+}

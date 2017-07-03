@@ -1,0 +1,31 @@
+	1.创建逻辑卷LVM：
+fdisk-->pvcreate-->vgcreate-->lvcreate-->格式化-->挂载-->扩充
+（1）.使用fdisk 硬盘   来进行分区
+n创建分区;e创建扩展分区;第四分区为扩展分区;p查看分区情况;t把分区类型:比如FAT，LVM等等;
+wq保存信息
+（2）.partprobe让内核刷新分区信息
+（3）cat /proc/partitions查看分区情况
+（4）pvcreate 分区{1,2}    合并分区1,2创建PV
+（5）pvdisplay查看PV情况
+（6）vgcreate -s PE大小  vg0 /分区{1,2}  给PE进行分块的大小，1个PE的是组成逻辑卷的一个单位
+（7）lvcreate -L 大小 -n lv0 vg0  给逻辑卷lv0分大小 
+（8）mkfs.文件类型 /dev/vg0/lv0    
+（9）挂载
+（10）需要扩展逻辑卷：lvextend -L 2G /dev/vg0/lv0   
+（11）上一步值扩展了数据段，控制段也需要扩展
+xfs_growfs /dev/vg0/lv0
+	c语言
+	2.注释的方法：
+（1）/**/
+ (2) //
+(3) #if0
+    #endif
+	3.编译过程：
+（1）预处理：gcc -E .c -o .i 
+输出.i文件，是源文件的所有使用的库都包含在里面
+（2）编译：gcc -S .i -o .s
+编译的汇编文件,都是汇编指令
+（3）汇编：gcc -c .s -o .o
+生成二进制文件
+（4）链接：与一些其他二进制文件组合共同生成可执行文件
+
